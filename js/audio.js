@@ -1,25 +1,32 @@
-//sound effects
-let rocket = new Audio('./audio/rocket.mp3');
-
 //opening music
-let opening = new Audio('./audio/opening.mp3');
+const opening = new Audio('./audio/opening.mp3');
 
 //gameplay music
-let closing = new Audio('./audio/closing.mp3');
-let hope = new Audio('./audio/hope.mp3');
-let journey = new Audio('./audio/journey.mp3');
-let lawn = new Audio('./audio/lawn.mp3');
-let hannah = new Audio('./audio/hannah.mp3');
-let vivid = new Audio('./audio/vivid.mp3');
-let odyssey = new Audio('./audio/odyssey.mp3');
-let closer = new Audio('./audio/closer.mp3');
-let spacedOut = new Audio('./audio/spaced-out.mp3');
-let space = new Audio('./audio/space.mp3');
-let march = new Audio('./audio/march.mp3');
-let mochas = new Audio('./audio/mochas.mp3');
-let color = new Audio('./audio/color.mp3');
+const closing = new Audio('./audio/closing.mp3');
+const hope = new Audio('./audio/hope.mp3');
+const journey = new Audio('./audio/journey.mp3');
+const lawn = new Audio('./audio/lawn.mp3');
+const hannah = new Audio('./audio/hannah.mp3');
+const vivid = new Audio('./audio/vivid.mp3');
+const odyssey = new Audio('./audio/odyssey.mp3');
+const closer = new Audio('./audio/closer.mp3');
+const spacedOut = new Audio('./audio/spaced-out.mp3');
+const space = new Audio('./audio/space.mp3');
+const march = new Audio('./audio/march.mp3');
+const mochas = new Audio('./audio/mochas.mp3');
+const color = new Audio('./audio/color.mp3');
+const shadowed = new Audio('./audio/shadowed.mp3');
+const water = new Audio('./audio/water.mp3');
+const adrift = new Audio('./audio/adrift.mp3');
+const formations = new Audio('./audio/formations.mp3');
+const callisto = new Audio('./audio/callisto.mp3');
+const dragon = new Audio('./audio/dragon.mp3');
+const emos = new Audio('./audio/emos.mp3')
 
-let songs = [closing, hope, journey, lawn, hannah, vivid, odyssey, closer, spacedOut, space, march, mochas, color];
+
+let songs = [closing, hope, journey, lawn, hannah, vivid, odyssey, 
+  closer, spacedOut, space, march, mochas, color, shadowed, water,
+adrift, formations, callisto, dragon, emos];
 
 let nextSong;
 
@@ -106,7 +113,7 @@ function pauseGameMusic() {
     } else {
       nextSong.pause(); // Pause the in-game music
       gameMusicPaused = true;
-      muteButton.innerText = 'play music'; 
+      muteButton.innerText = 'play'; 
     }
   }
   

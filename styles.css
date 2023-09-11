@@ -58,7 +58,6 @@ html, body, .opening-section {
     cursor: pointer;
     position: absolute;
     color: white;
-    background-color: black;
     padding: none;
     display: flex;
     flex-direction: row;
@@ -70,6 +69,20 @@ html, body, .opening-section {
     cursor: pointer;
     margin-top: 5px;
     margin-left: 5px;
+    color: white;
+    background-color: black;
+    padding: none;
+    font-size: large;
+  }
+
+
+  .score-back{
+    margin-top: 5px;
+    right: 5px;
+    cursor: pointer;
+    position: fixed;
+    text-decoration: none;
+    margin-bottom: 5px;
     color: white;
     background-color: black;
     padding: none;
@@ -111,3 +124,43 @@ html, body, .opening-section {
         max-width: 200px;
     }
 }
+
+@media(max-width:506px){
+    .audio  {
+      display: none;
+  }
+  #volume-icon{
+    font-size: 50px;
+    color: red;
+    margin-left: 10px;
+  }
+  }
+
+  @media(max-width:450px){
+    #volume-icon{
+      font-size: 45px;
+    }
+    }
+    
+    @media(max-width:330px){
+        #volume-icon{
+        font-size: 40px;
+        margin-top: 10px;
+      }
+      #next-button{
+        margin-left: 0px;
+      }
+    }
+
+    @media(max-width:330px){
+        #volume-icon{
+        font-size: 40px;
+        margin-top: 10px;
+      }
+    }
+
+    @media(max-width:290px){
+        #song{
+            display: none;
+        }
+    }
