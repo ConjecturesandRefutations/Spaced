@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&');
+
+*{
+    font-family: poppins;
+}
+
+html, body, .opening-section {
+    margin: 0;
+    padding: 0;
+}
+
+#title{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+    width: 500px;
+}
+
+#start-button{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+
+#start-button:hover{
+    background-color: white;
+}
+
+#canvas{
+   position: absolute;
+   border: 2px solid red;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+}
+
+.opening-section{
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background-image: url('images/NASA.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+@media(max-width:500px){
+    #title{
+        max-width: 350px;
+    }
+    #start-button{
+        max-width: 300px;
+    }
+}
+
+@media(max-width:400px){
+    #title{
+        max-width: 300px;
+    }
+    #start-button{
+        max-width: 250px;
+    }
+}
+
+@media(max-width:330px){
+    #title{
+        max-width: 250px;
+    }
+    #start-button{
+        max-width: 200px;
+    }
+}
+
+@media(max-width:280px){
+    #title{
+        max-width: 230px;
+    }
+    #start-button{
+        max-width: 200px;
+    }
+}
