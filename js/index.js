@@ -3,7 +3,7 @@ const canvas = document.getElementById('canvas');
 canvas.style.display = 'none';
 
 //Opening Section
-const openingSection = document.querySelector('opening-section');
+const openingSection = document.querySelector('.opening-section');
 
 //Start Button
 const startButton = document.getElementById('start-button');
