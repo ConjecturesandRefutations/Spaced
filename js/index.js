@@ -5,11 +5,12 @@ canvas.style.display = 'none';
 //Opening Section
 const openingSection = document.querySelector('.opening-section');
 
-//Start Button
+// Start Button
 const startButton = document.getElementById('start-button');
-window.onload = () => {
-    startButton.onclick = () => {
-    openingSection.style.display = 'none';
-    canvas.style.display = '';
-    };
-  };
+startButton.onclick = () => {
+  opening.pause();
+  openingSection.style.display = 'none';
+  canvas.style.display = '';
+  audioControls.style.display = '';
+  playNextRandomSong();
+};

@@ -7,6 +7,7 @@
 html, body, .opening-section {
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 #title{
@@ -26,7 +27,7 @@ html, body, .opening-section {
 }
 
 #start-button:hover{
-    background-color: white;
+    background-color: black;
 }
 
 #canvas{
@@ -37,17 +38,43 @@ html, body, .opening-section {
    transform: translate(-50%,-50%);
 }
 
+#sound{
+    color: red;
+  }  
+
 .opening-section{
     left: 0;
     right: 0;
     width: 100vw;
     height: 100vh;
     display: block;
-    background-image: url('images/NASA.jpg'); 
+    background-image: url('images/opening.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover;
     background-position: center;
 }
+
+.play-music{
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    background-color: black;
+    padding: none;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #volume-icon{margin-top: 20px;}
+
+  #mute-button, #next-button{
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+    color: white;
+    background-color: black;
+    padding: none;
+    font-size: large;
+  }
 
 @media(max-width:500px){
     #title{

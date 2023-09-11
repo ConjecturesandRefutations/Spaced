@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spaced</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <section class="opening-section">
+        <article class="play-music">
+            <p id="audio-button" class="audio"> CLICK <span id="sound">HERE</span> FOR OPENING MUSIC &ensp;</p><i class="fas fa-volume-mute" aria-hidden="true" id="volume-icon"></i>
+        </article>
         <img id="title" src="images/Spaced.png"/>
         <img src="images/Lift-Off.png" id="start-button" alt="">
     </section>
 
-    <canvas id="canvas" style="width: 80%; height: 80%;"></canvas>
+    <section id="canvas-containter">
+        <article class="audio-controls">
+        <button id="mute-button">mute</button>
+        <button id="next-button">next song</button>
+        </article>
+        <canvas id="canvas" style="width: 80%; height: 80%;"></canvas>
+    </section>
 
     <script src="js/index.js"></script>
+    <script src="js/audio.js"></script>
 
 </body>
 </html>
