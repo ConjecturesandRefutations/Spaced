@@ -27,10 +27,12 @@ startButton.onclick = () => {
 function startGame() {
   currentGame = new Game();
 
+    // Instantiate a new ship
+    currentShip = new Ship();
+    currentShip.drawShip();
+
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height); // draw background image
-  // Instantiate a new ship
-  currentShip = new Ship();
-  currentShip.drawShip();
+
   requestAnimationFrame(updateCanvas);
 }
 
