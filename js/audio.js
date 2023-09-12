@@ -119,7 +119,7 @@ function pauseGameMusic() {
   
 
 //Audio Controls
-const audioControls = document.querySelector('.audio-controls');
+const audioControls = document.querySelector('.utility-buttons');
 audioControls.style.display = 'none';
 
 //Mute Button
