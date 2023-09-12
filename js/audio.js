@@ -14,7 +14,6 @@ const spacedOut = new Audio('./audio/spaced-out.mp3');
 const space = new Audio('./audio/space.mp3');
 const march = new Audio('./audio/march.mp3');
 const mochas = new Audio('./audio/mochas.mp3');
-const color = new Audio('./audio/color.mp3');
 const shadowed = new Audio('./audio/shadowed.mp3');
 const water = new Audio('./audio/water.mp3');
 const adrift = new Audio('./audio/adrift.mp3');
@@ -25,7 +24,7 @@ const emos = new Audio('./audio/emos.mp3')
 
 
 let songs = [closing, hope, journey, lawn, hannah, vivid, odyssey, 
-closer, spacedOut, space, march, mochas, color, shadowed, water,
+closer, spacedOut, space, march, mochas, shadowed, water,
 adrift, formations, callisto, dragon, emos];
 
 let nextSong;
