@@ -31,11 +31,12 @@ html, body, .opening-section {
 }
 
 #canvas{
-   position: absolute;
-   border: 2px solid red;
-   left: 50%;
-   top: 50%;
-   transform: translate(-50%,-50%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
 }
 
 #sound{
@@ -65,22 +66,33 @@ html, body, .opening-section {
 
   #volume-icon{margin-top: 20px;}
 
+  .audio-controls{
+    position: absolute;
+  }
+
   #mute-button, #next-button{
     cursor: pointer;
     margin-top: 5px;
-    margin-left: 5px;
     color: white;
     background-color: black;
     padding: none;
     font-size: large;
+    z-index: 1;
   }
 
+  #mute-button{
+    margin-left: 50px;
+  }
+
+  #next-button{
+    margin-left: 5px;
+  }
 
   .score-back{
-    margin-top: 5px;
-    right: 5px;
-    cursor: pointer;
     position: fixed;
+    margin-top: 10px;
+    right: 50px;
+    cursor: pointer;
     text-decoration: none;
     margin-bottom: 5px;
     color: white;

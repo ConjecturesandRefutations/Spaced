@@ -25,7 +25,7 @@ const emos = new Audio('./audio/emos.mp3')
 
 
 let songs = [closing, hope, journey, lawn, hannah, vivid, odyssey, 
-  closer, spacedOut, space, march, mochas, color, shadowed, water,
+closer, spacedOut, space, march, mochas, color, shadowed, water,
 adrift, formations, callisto, dragon, emos];
 
 let nextSong;
