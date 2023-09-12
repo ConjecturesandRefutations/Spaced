@@ -25,7 +25,7 @@ startButton.onclick = () => {
 function startGame() {
   currentGame = new Game();
 
-  ctx.drawImage(background, 0, 0, myCanvas.width, myCanvas.height); // draw background image
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height); // draw background image
   // Instantiate a new ship
   currentShip = new Ship();
   currentShip.drawShip();
