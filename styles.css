@@ -66,31 +66,30 @@ html, body, .opening-section {
 
   #volume-icon{margin-top: 20px;}
 
-  .audio-controls{
-    position: absolute;
+  .utility-buttons{
+    margin-top: 10px;
   }
 
-  #mute-button, #next-button{
-    cursor: pointer;
-    margin-top: 5px;
+.audio-controls{
+    position: absolute;
+    left: 50px;
+}
+
+#mute-button,#next-button{
+    text-decoration: none;
+    margin-bottom: 5px;
     color: white;
     background-color: black;
     padding: none;
     font-size: large;
-    z-index: 1;
-  }
-
-  #mute-button{
-    margin-left: 50px;
-  }
+}
 
   #next-button{
     margin-left: 5px;
   }
 
-  .score-back{
-    position: fixed;
-    margin-top: 10px;
+  .homepage{
+    position: absolute;
     right: 50px;
     cursor: pointer;
     text-decoration: none;
