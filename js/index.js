@@ -21,7 +21,7 @@ startButton.onclick = () => {
   audioControls.style.display = '';
   playNextRandomSong();
   startGame();
-};
+}
 };
 
 function startGame() {
@@ -31,7 +31,7 @@ function startGame() {
   // Instantiate a new ship
   currentShip = new Ship();
   currentShip.drawShip();
-  updateCanvas();
+  requestAnimationFrame(updateCanvas);
 }
 
 function updateCanvas() {
