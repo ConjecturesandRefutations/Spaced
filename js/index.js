@@ -39,9 +39,6 @@ function startGame() {
 function updateCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
 
-  // Draw background image
-  ctx.drawImage(background, backgroundX, 0, canvas.width, canvas.height);
-
   // Scroll the background to the left
   backgroundX -= 0.3; 
   // Reset the background position if it goes beyond the canvas width
@@ -49,6 +46,8 @@ function updateCanvas() {
     backgroundX = 0;
   }
 
+   // Draw background image
+   ctx.drawImage(background, backgroundX, 0, canvas.width, canvas.height);
   // Draw the second copy of the background image to create the continuous scroll
   ctx.drawImage(background, backgroundX + canvas.width, 0, canvas.width, canvas.height);
 
