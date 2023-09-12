@@ -16,6 +16,7 @@ const openingSection = document.querySelector('.opening-section');
 const homeButton = document.querySelector('.homepage');
 homeButton.onclick = () => {
   nextSong.pause();
+  muteButton.innerText = 'mute';
   openingSection.style.display = '';
   canvas.style.display = 'none';
   audioControls.style.display = 'none';
