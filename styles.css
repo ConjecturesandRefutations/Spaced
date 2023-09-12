@@ -82,6 +82,7 @@ html, body, .opening-section {
     background-color: black;
     padding: none;
     font-size: large;
+    cursor: pointer;
 }
 
   #next-button{

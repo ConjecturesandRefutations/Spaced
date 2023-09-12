@@ -38,8 +38,7 @@ function updateCanvas() {
   ctx.drawImage(background, backgroundX, 0, canvas.width, canvas.height);
 
   // Scroll the background to the left
-  backgroundX -= 1; // Adjust the scroll speed as needed
-
+  backgroundX -= 0.3; 
   // Reset the background position if it goes beyond the canvas width
   if (backgroundX <= -canvas.width) {
     backgroundX = 0;
