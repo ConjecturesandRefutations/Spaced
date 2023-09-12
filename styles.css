@@ -58,7 +58,7 @@ html, body, .opening-section {
 .play-music{
     cursor: pointer;
     position: absolute;
-    color: white;
+    color: red;
     padding: none;
     display: flex;
     flex-direction: row;
@@ -101,6 +101,17 @@ html, body, .opening-section {
     font-size: large;
   }
 
+  @media(max-width:506px){
+    .audio  {
+      display: none;
+  }
+  #volume-icon{
+    font-size: 50px;
+    color: red;
+    margin-left: 10px;
+  }
+  }
+
 @media(max-width:500px){
     #title{
         max-width: 350px;
@@ -108,7 +119,20 @@ html, body, .opening-section {
     #start-button{
         max-width: 300px;
     }
+    .audio-controls{
+        left: 20px
+    }
+    .homepage{
+        right: 20px;
+    }
 }
+
+
+@media(max-width:450px){
+    #volume-icon{
+      font-size: 45px;
+    }
+    }
 
 @media(max-width:400px){
     #title{
@@ -119,12 +143,41 @@ html, body, .opening-section {
     }
 }
 
-@media(max-width:330px){
-    #title{
-        max-width: 250px;
+@media(max-width:340px){
+    #next-button{
+        margin-left: 0;
     }
-    #start-button{
-        max-width: 200px;
+}
+
+@media(max-width:330px){
+    #volume-icon{
+    font-size: 40px;
+    margin-top: 10px;
+  }
+  #next-button{
+    margin-left: 0px;
+  }
+  #title{
+    max-width: 250px;
+}
+#start-button{
+    max-width: 200px;
+}
+#song{
+    display: none;
+}
+#volume-icon{
+    font-size: 40px;
+    margin-top: 10px;
+  }
+}
+
+@media(max-width:300px){
+    .audio-controls{
+        left: 5px;
+    }
+    .homepage{
+        right: 5px;
     }
 }
 
@@ -136,43 +189,5 @@ html, body, .opening-section {
         max-width: 200px;
     }
 }
-
-@media(max-width:506px){
-    .audio  {
-      display: none;
-  }
-  #volume-icon{
-    font-size: 50px;
-    color: red;
-    margin-left: 10px;
-  }
-  }
-
-  @media(max-width:450px){
-    #volume-icon{
-      font-size: 45px;
-    }
-    }
     
-    @media(max-width:330px){
-        #volume-icon{
-        font-size: 40px;
-        margin-top: 10px;
-      }
-      #next-button{
-        margin-left: 0px;
-      }
-    }
-
-    @media(max-width:330px){
-        #volume-icon{
-        font-size: 40px;
-        margin-top: 10px;
-      }
-    }
-
-    @media(max-width:290px){
-        #song{
-            display: none;
-        }
-    }
+    
