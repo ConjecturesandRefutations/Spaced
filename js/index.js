@@ -15,7 +15,7 @@ const openingSection = document.querySelector('.opening-section');
 // Homepage Button
 const homeButton = document.querySelector('.homepage');
 homeButton.onclick = () => {
-  pauseGameMusic();
+  nextSong.pause();
   openingSection.style.display = '';
   canvas.style.display = 'none';
   audioControls.style.display = 'none';
