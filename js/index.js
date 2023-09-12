@@ -1,18 +1,14 @@
-//Key Variables
-
+// Key Variables
 let background = new Image();
-let backgroundY = 0;
+let backgroundX = 0;
 background.src = "./images/game.jpg";
 
-
-//Canvas
+// Canvas
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 canvas.style.display = 'none';
 
-
-
-//Opening Section
+// Opening Section
 const openingSection = document.querySelector('.opening-section');
 
 // Start Button
@@ -27,34 +23,32 @@ startButton.onclick = () => {
 };
 
 function startGame() {
-
   currentGame = new Game();
 
-  // Draw background image
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height); 
-   // Scroll the background downwards
-   backgroundY += 5;
-   if (backgroundY >= myCanvas.height) {
-       backgroundY = 0;
-   }
-
-   // Draw the background image twice, one above the other, to cover the entire canvas
-   ctx.drawImage(background, 0, backgroundY, myCanvas.width, myCanvas.height);
-   ctx.drawImage(background, 0, backgroundY - myCanvas.height, myCanvas.width, myCanvas.height);
-   
   // Instantiate a new ship
   currentShip = new Ship();
   currentShip.drawShip();
   updateCanvas();
-
 }
 
-
 function updateCanvas() {
-  ctx.clearRect(0, 0, canvas.height, canvas.width); // clear canvas
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height); // redraw the background
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
 
- currentShip.drawShip(); // redraw the ship at its current position
+  // Draw background image
+  ctx.drawImage(background, backgroundX, 0, canvas.width, canvas.height);
 
- requestAnimationFrame(updateCanvas);
+  // Scroll the background to the left
+  backgroundX -= 1; // Adjust the scroll speed as needed
+
+  // Reset the background position if it goes beyond the canvas width
+  if (backgroundX <= -canvas.width) {
+    backgroundX = 0;
+  }
+
+  // Draw the second copy of the background image to create the continuous scroll
+  ctx.drawImage(background, backgroundX + canvas.width, 0, canvas.width, canvas.height);
+
+  currentShip.drawShip(); // redraw the ship at its current position
+
+  requestAnimationFrame(updateCanvas);
 }
