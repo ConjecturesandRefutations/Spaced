@@ -12,6 +12,7 @@ canvas.style.display = 'none';
 const openingSection = document.querySelector('.opening-section');
 
 // Start Button
+window.onload = () => {
 const startButton = document.getElementById('start-button');
 startButton.onclick = () => {
   opening.pause();
@@ -20,6 +21,7 @@ startButton.onclick = () => {
   audioControls.style.display = '';
   playNextRandomSong();
   startGame();
+};
 };
 
 function startGame() {
