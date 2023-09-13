@@ -108,11 +108,11 @@ function pauseGameMusic() {
     if (gameMusicPaused) {
       nextSong.play(); // Resume the in-game music
       gameMusicPaused = false;
-      muteButton.innerText = 'mute';
+      muteButton.innerHTML = '<img id="mute" src="./images/mute.png"/>';
     } else {
       nextSong.pause(); // Pause the in-game music
       gameMusicPaused = true;
-      muteButton.innerText = 'play'; 
+      muteButton.innerHTML = '<img id="play" src="./images/play.png"/>'; 
     }
   }
   

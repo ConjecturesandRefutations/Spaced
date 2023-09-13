@@ -30,6 +30,12 @@ html, body, .opening-section {
     background-color: black;
 }
 
+.audio{
+    height: 15px;
+    margin-top: 21px;
+    margin-left: 10px;
+}
+
 #canvas{
     position: fixed;
     top: 0;
@@ -78,11 +84,24 @@ html, body, .opening-section {
 #mute-button,#next-button{
     text-decoration: none;
     margin-bottom: 5px;
-    color: white;
-    background-color: black;
+    background-color: transparent;
     padding: none;
-    font-size: large;
     cursor: pointer;
+}
+
+#mute{
+    max-width: 75px;
+    margin-top: 5px;
+}
+
+#play{
+    max-width: 70px;
+    margin-top: 5px;
+}
+
+#skip{
+    max-width: 140px;
+    margin-top: 5px;
 }
 
   #next-button{
@@ -96,9 +115,14 @@ html, body, .opening-section {
     text-decoration: none;
     margin-bottom: 5px;
     color: white;
-    background-color: black;
+    background-color: transparent;
     padding: none;
     font-size: large;
+  }
+
+  #homepageImg{
+    max-width: 150px;
+    margin-top: 5px;
   }
 
   @media(max-width:506px){
@@ -110,6 +134,17 @@ html, body, .opening-section {
     color: red;
     margin-left: 10px;
   }
+  }
+
+  @media(max-width:520px){
+    .audio-controls{
+        display: flex;
+        flex-direction: column;
+        justify-items: flex-start;
+    }
+    #next-button{
+        margin-left: 0px;
+    }
   }
 
 @media(max-width:500px){
@@ -143,28 +178,29 @@ html, body, .opening-section {
     }
 }
 
-@media(max-width:340px){
-    #next-button{
-        margin-left: 0;
+@media(max-width:365px){
+    .utility-buttons{
+        display: flex;
+        flex-direction: column;
     }
-}
+    .homepage{
+        position: absolute;
+        left: 20px;
+        top: 85px;
+        max-width: 160px;
+    }
+  }
 
 @media(max-width:330px){
     #volume-icon{
     font-size: 40px;
     margin-top: 10px;
   }
-  #next-button{
-    margin-left: 0px;
-  }
   #title{
     max-width: 250px;
 }
 #start-button{
     max-width: 200px;
-}
-#song{
-    display: none;
 }
 #volume-icon{
     font-size: 40px;
@@ -173,11 +209,8 @@ html, body, .opening-section {
 }
 
 @media(max-width:300px){
-    .audio-controls{
+    .audio-controls,.homepage{
         left: 5px;
-    }
-    .homepage{
-        right: 5px;
     }
 }
 

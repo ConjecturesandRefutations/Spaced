@@ -17,7 +17,7 @@ const homeButton = document.querySelector('.homepage');
   homeButton.onclick = () => {
   nextSong.pause();
   openingAudioPlaying = false;
-  muteButton.innerText = 'mute';
+  muteButton.innerHTML = '<img id="mute" src="./images/mute.png"/>';
   volumeIcon.classList.remove('fa', 'fa-volume-up');
   volumeIcon.classList.add('fa', 'fa-volume-mute');
   openingSection.style.display = '';
