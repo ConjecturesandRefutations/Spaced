@@ -35,8 +35,8 @@ window.onload = () => {
     openingSection.style.display = 'none';
     canvas.style.display = '';
     audioControls.style.display = '';
-    playNextRandomSong();
     startGame();
+    playNextRandomSong();
   };
 };
 
