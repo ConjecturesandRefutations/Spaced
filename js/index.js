@@ -36,6 +36,7 @@ window.onload = () => {
   startButton.onclick = () => {
     opening.pause();
     opening.currentTime = 0;
+    playNextRandomSong();
     openingSection.style.display = 'none';
     canvas.style.display = '';
     audioControls.style.display = '';
@@ -49,8 +50,6 @@ function startGame() {
   // Instantiate a new ship
   currentShip = new Ship();
   currentShip.drawShip();
-
-  playNextRandomSong();
 
   // Clear any previous animation loop
   cancelAnimationFrame(animationID);
