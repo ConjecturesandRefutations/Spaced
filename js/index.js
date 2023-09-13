@@ -14,9 +14,12 @@ const openingSection = document.querySelector('.opening-section');
 
 // Homepage Button
 const homeButton = document.querySelector('.homepage');
-homeButton.onclick = () => {
+  homeButton.onclick = () => {
   nextSong.pause();
+  openingAudioPlaying = false;
   muteButton.innerText = 'mute';
+  volumeIcon.classList.remove('fa', 'fa-volume-up');
+  volumeIcon.classList.add('fa', 'fa-volume-mute');
   openingSection.style.display = '';
   canvas.style.display = 'none';
   audioControls.style.display = 'none';
@@ -32,11 +35,11 @@ window.onload = () => {
   const startButton = document.getElementById('start-button');
   startButton.onclick = () => {
     opening.pause();
+    opening.currentTime = 0;
     openingSection.style.display = 'none';
     canvas.style.display = '';
     audioControls.style.display = '';
     startGame();
-    playNextRandomSong();
   };
 };
 
@@ -46,6 +49,8 @@ function startGame() {
   // Instantiate a new ship
   currentShip = new Ship();
   currentShip.drawShip();
+
+  playNextRandomSong();
 
   // Clear any previous animation loop
   cancelAnimationFrame(animationID);
