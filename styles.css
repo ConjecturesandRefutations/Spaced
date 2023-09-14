@@ -125,6 +125,65 @@ html, body, .opening-section {
     margin-top: 5px;
   }
 
+  .circle-container{
+    display: none;
+  }
+
+.arrow-button {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    color: red;
+    border-radius: 50%;
+    font-size: 35px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.up {
+    top: 10px;
+}
+
+.down {
+    bottom: 10px;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+@media(max-width:520px){
+    .audio-controls{
+        display: flex;
+        flex-direction: column;
+        justify-items: flex-start;
+    }
+    #next-button{
+        margin-left: 0px;
+    }
+    .circle-container {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0%;
+        margin-top: -15px;
+        left: 50%;
+        transform: translate(-50%);  
+    }
+  }
+
   @media(max-width:506px){
     .audio  {
       display: none;
@@ -134,17 +193,6 @@ html, body, .opening-section {
     color: red;
     margin-left: 10px;
   }
-  }
-
-  @media(max-width:520px){
-    .audio-controls{
-        display: flex;
-        flex-direction: column;
-        justify-items: flex-start;
-    }
-    #next-button{
-        margin-left: 0px;
-    }
   }
 
 @media(max-width:500px){

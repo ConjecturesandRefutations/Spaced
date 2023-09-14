@@ -12,6 +12,10 @@ canvas.style.display = 'none';
 // Opening Section
 const openingSection = document.querySelector('.opening-section');
 
+//Mobile Arrows
+const arrows = document.querySelector('.circle-container')
+arrows.style.display = 'none'
+
 // Homepage Button
 const homeButton = document.querySelector('.homepage');
   homeButton.onclick = () => {
@@ -40,6 +44,7 @@ window.onload = () => {
     openingSection.style.display = 'none';
     canvas.style.display = '';
     audioControls.style.display = '';
+    arrows.style.display = '';
     startGame();
   };
 };
