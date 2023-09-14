@@ -15,17 +15,6 @@ class Ship {
     document.addEventListener('keydown', (event) => this.handleKeyDown(event));
     document.addEventListener('keyup', (event) => this.handleKeyUp(event));
 
-    // Event listeners for touch controls
-    document.getElementById('up-button').addEventListener('touchstart', () => this.startMovingShip('up'));
-    document.getElementById('down-button').addEventListener('touchstart', () => this.startMovingShip('down'));
-    document.getElementById('left-button').addEventListener('touchstart', () => this.startMovingShip('left'));
-    document.getElementById('right-button').addEventListener('touchstart', () => this.startMovingShip('right'));
-
-    document.getElementById('up-button').addEventListener('touchend', () => this.stopMovingShip());
-    document.getElementById('down-button').addEventListener('touchend', () => this.stopMovingShip());
-    document.getElementById('left-button').addEventListener('touchend', () => this.stopMovingShip());
-    document.getElementById('right-button').addEventListener('touchend', () => this.stopMovingShip());
-
     // Throttle the keydown event listeners
     this.throttledUpStart = this.throttle(() => this.startMovingShip('up'), this.throttleDelay);
     this.throttledDownStart = this.throttle(() => this.startMovingShip('down'), this.throttleDelay);
