@@ -15,13 +15,7 @@ class Ship {
     document.addEventListener('keydown', (event) => this.handleKeyDown(event));
     document.addEventListener('keyup', (event) => this.handleKeyUp(event));
 
-    // Throttle the keydown event listeners
-    this.throttledUpStart = this.throttle(() => this.startMovingShip('up'), this.throttleDelay);
-    this.throttledDownStart = this.throttle(() => this.startMovingShip('down'), this.throttleDelay);
-    this.throttledLeftStart = this.throttle(() => this.startMovingShip('left'), this.throttleDelay);
-    this.throttledRightStart = this.throttle(() => this.startMovingShip('right'), this.throttleDelay);
-
-    // Event listeners for mobile arrow buttons
+    // Event listeners for touch controls
     document.getElementById('up-button').addEventListener('touchstart', () => this.startMovingShip('up'));
     document.getElementById('down-button').addEventListener('touchstart', () => this.startMovingShip('down'));
     document.getElementById('left-button').addEventListener('touchstart', () => this.startMovingShip('left'));
@@ -31,6 +25,13 @@ class Ship {
     document.getElementById('down-button').addEventListener('touchend', () => this.stopMovingShip());
     document.getElementById('left-button').addEventListener('touchend', () => this.stopMovingShip());
     document.getElementById('right-button').addEventListener('touchend', () => this.stopMovingShip());
+
+    // Throttle the keydown event listeners
+    this.throttledUpStart = this.throttle(() => this.startMovingShip('up'), this.throttleDelay);
+    this.throttledDownStart = this.throttle(() => this.startMovingShip('down'), this.throttleDelay);
+    this.throttledLeftStart = this.throttle(() => this.startMovingShip('left'), this.throttleDelay);
+    this.throttledRightStart = this.throttle(() => this.startMovingShip('right'), this.throttleDelay);
+
   }
 
   drawShip() {
