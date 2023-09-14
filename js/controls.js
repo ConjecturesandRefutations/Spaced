@@ -20,6 +20,17 @@ class Ship {
     this.throttledDownStart = this.throttle(() => this.startMovingShip('down'), this.throttleDelay);
     this.throttledLeftStart = this.throttle(() => this.startMovingShip('left'), this.throttleDelay);
     this.throttledRightStart = this.throttle(() => this.startMovingShip('right'), this.throttleDelay);
+
+    // Event listeners for mobile arrow buttons
+    document.getElementById('up-button').addEventListener('touchstart', () => this.startMovingShip('up'));
+    document.getElementById('down-button').addEventListener('touchstart', () => this.startMovingShip('down'));
+    document.getElementById('left-button').addEventListener('touchstart', () => this.startMovingShip('left'));
+    document.getElementById('right-button').addEventListener('touchstart', () => this.startMovingShip('right'));
+
+    document.getElementById('up-button').addEventListener('touchend', () => this.stopMovingShip());
+    document.getElementById('down-button').addEventListener('touchend', () => this.stopMovingShip());
+    document.getElementById('left-button').addEventListener('touchend', () => this.stopMovingShip());
+    document.getElementById('right-button').addEventListener('touchend', () => this.stopMovingShip());
   }
 
   drawShip() {
