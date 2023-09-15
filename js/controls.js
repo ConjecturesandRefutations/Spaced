@@ -11,6 +11,13 @@ class Ship {
     this.rightButtonDown = false;
     this.throttleDelay = 100; // Keyboard Throttle Delay (Milliseconds)
 
+    // Select the mobile-controls buttons
+    this.leftButton = document.getElementById('left-button');
+    this.rightButton = document.getElementById('right-button');
+    this.upButton = document.getElementById('up-button');
+    this.downButton = document.getElementById('down-button');
+
+
     // Event listeners for keyboard controls
     document.addEventListener('keydown', (event) => this.handleKeyDown(event));
     document.addEventListener('keyup', (event) => this.handleKeyUp(event));
@@ -104,4 +111,94 @@ class Ship {
       cancelAnimationFrame(this.requestAnimationFrame);
     }
   }
+}
+
+function addTouchListeners() {
+  // Touch event handling for leftButton
+  currentShip.leftButton.ontouchstart = () => {
+    currentShip.leftButtonDown = true;
+    currentShip.throttledLeftStart();
+  };
+
+  currentShip.leftButton.ontouchend = () => {
+    currentShip.leftButtonDown = false;
+    currentShip.stopMovingShip();
+  };
+
+  // Touch event handling for rightButton
+  currentShip.rightButton.ontouchstart = () => {
+    currentShip.rightButtonDown = true;
+    currentShip.throttledRightStart();
+  };
+
+  currentShip.rightButton.ontouchend = () => {
+    currentShip.rightButtonDown = false;
+    currentShip.stopMovingShip();
+  };
+
+  // Touch event handling for upButton
+  currentShip.upButton.ontouchstart = () => {
+    currentShip.upButtonDown = true;
+    currentShip.throttledUpStart();
+  };
+
+  currentShip.upButton.ontouchend = () => {
+    currentShip.upButtonDown = false;
+    currentShip.stopMovingShip();
+  };
+
+  // Touch event handling for downButton
+  currentShip.downButton.ontouchstart = () => {
+    currentShip.downButtonDown = true;
+    currentShip.throttledDownStart();
+  };
+
+  currentShip.downButton.ontouchend = () => {
+    currentShip.downButtonDown = false;
+    currentShip.stopMovingShip();
+  };
+
+  // Mouse event handling for leftButton
+  currentShip.leftButton.onmousedown = () => {
+    currentShip.leftButtonDown = true;
+    currentShip.throttledLeftStart();
+  };
+
+  currentShip.leftButton.onmouseup = () => {
+    currentShip.leftButtonDown = false;
+    currentShip.stopMovingShip();
+  };
+
+  // Mouse event handling for rightButton
+  currentShip.rightButton.onmousedown = () => {
+    currentShip.rightButtonDown = true;
+    currentShip.throttledRightStart();
+  };
+
+  currentShip.rightButton.onmouseup = () => {
+    currentShip.rightButtonDown = false;
+    currentShip.stopMovingShip();
+  };
+
+  // Mouse event handling for upButton
+  currentShip.upButton.onmousedown = () => {
+    currentShip.upButtonDown = true;
+    currentShip.throttledUpStart();
+  };
+
+  currentShip.upButton.onmouseup = () => {
+    currentShip.upButtonDown = false;
+    currentShip.stopMovingShip();
+  };
+
+  // Mouse event handling for downButton
+  currentShip.downButton.onmousedown = () => {
+    currentShip.downButtonDown = true;
+    currentShip.throttledDownStart();
+  };
+
+  currentShip.downButton.onmouseup = () => {
+    currentShip.downButtonDown = false;
+    currentShip.stopMovingShip();
+  };
 }

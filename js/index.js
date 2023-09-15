@@ -3,6 +3,7 @@ let background = new Image();
 let backgroundX = 0;
 background.src = "./images/game.jpg";
 let homepaged = false;
+let currentShip;
 
 // Canvas
 const canvas = document.getElementById('canvas');
@@ -56,6 +57,8 @@ function startGame() {
   // Instantiate a new ship
   currentShip = new Ship();
   currentShip.drawShip();
+
+  addTouchListeners();
 
   // Clear any previous animation loop
   cancelAnimationFrame(animationID);
