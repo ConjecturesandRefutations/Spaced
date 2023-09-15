@@ -115,7 +115,8 @@ class Ship {
 
 function addTouchListeners() {
   // Touch event handling for leftButton
-  currentShip.leftButton.ontouchstart = () => {
+  currentShip.leftButton.ontouchstart = (event) => {
+    event.preventDefault();
     currentShip.leftButtonDown = true;
     currentShip.throttledLeftStart();
   };
@@ -126,7 +127,8 @@ function addTouchListeners() {
   };
 
   // Touch event handling for rightButton
-  currentShip.rightButton.ontouchstart = () => {
+  currentShip.rightButton.ontouchstart = (event) => {
+    event.preventDefault();
     currentShip.rightButtonDown = true;
     currentShip.throttledRightStart();
   };
@@ -137,7 +139,8 @@ function addTouchListeners() {
   };
 
   // Touch event handling for upButton
-  currentShip.upButton.ontouchstart = () => {
+  currentShip.upButton.ontouchstart = (event) => {
+    event.preventDefault();
     currentShip.upButtonDown = true;
     currentShip.throttledUpStart();
   };
@@ -148,7 +151,8 @@ function addTouchListeners() {
   };
 
   // Touch event handling for downButton
-  currentShip.downButton.ontouchstart = () => {
+  currentShip.downButton.ontouchstart = (event) => {
+    event.preventDefault();
     currentShip.downButtonDown = true;
     currentShip.throttledDownStart();
   };
