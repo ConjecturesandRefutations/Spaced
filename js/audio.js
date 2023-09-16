@@ -25,11 +25,14 @@ const binary = new Audio('./audio/binary.mp3');
 const clipper = new Audio('./audio/clipper.mp3');
 const stone = new Audio('./audio/stone.mp3');
 const alpha= new Audio('./audio/alpha.mp3');
+const vastrond= new Audio('./audio/vastrond.mp3');
+const loved= new Audio('./audio/loved.mp3');
 
 let songs = [closing, hope, journey, lawn, vivid, 
 closer, spacedOut, space, march, mochas, shadowed, water,
 adrift, callisto, dragon, emos, radiohead, xtal,
-helisophan, binary, clipper, stone, alpha];
+helisophan, binary, clipper, stone, alpha, vastrond,
+loved];
 
 let nextSong;
 
