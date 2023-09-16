@@ -8,7 +8,6 @@ const journey = new Audio('./audio/journey.mp3');
 const lawn = new Audio('./audio/lawn.mp3');
 const hannah = new Audio('./audio/hannah.mp3');
 const vivid = new Audio('./audio/vivid.mp3');
-const odyssey = new Audio('./audio/odyssey.mp3');
 const closer = new Audio('./audio/closer.mp3');
 const spacedOut = new Audio('./audio/spaced-out.mp3');
 const space = new Audio('./audio/space.mp3');
@@ -26,7 +25,7 @@ const helisophan = new Audio('./audio/heliosphan.mp3');
 const binary = new Audio('./audio/binary.mp3');
 const clipper = new Audio('./audio/clipper.mp3');
 
-let songs = [closing, hope, journey, lawn, hannah, vivid, odyssey, 
+let songs = [closing, hope, journey, lawn, hannah, vivid, 
 closer, spacedOut, space, march, mochas, shadowed, water,
 adrift, callisto, dragon, emos, radiohead, xtal,
 helisophan, binary, clipper];
