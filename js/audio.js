@@ -17,15 +17,19 @@ const mochas = new Audio('./audio/mochas.mp3');
 const shadowed = new Audio('./audio/shadowed.mp3');
 const water = new Audio('./audio/water.mp3');
 const adrift = new Audio('./audio/adrift.mp3');
-const formations = new Audio('./audio/formations.mp3');
 const callisto = new Audio('./audio/callisto.mp3');
 const dragon = new Audio('./audio/dragon.mp3');
-const emos = new Audio('./audio/emos.mp3')
-
+const emos = new Audio('./audio/emos.mp3');
+const radiohead = new Audio('./audio/radiohead.mp3');
+const xtal = new Audio('./audio/xtal.mp3');
+const helisophan = new Audio('./audio/heliosphan.mp3');
+const binary = new Audio('./audio/binary.mp3');
+const clipper = new Audio('./audio/clipper.mp3');
 
 let songs = [closing, hope, journey, lawn, hannah, vivid, odyssey, 
 closer, spacedOut, space, march, mochas, shadowed, water,
-adrift, formations, callisto, dragon, emos];
+adrift, callisto, dragon, emos, radiohead, xtal,
+helisophan, binary, clipper];
 
 let nextSong;
 
