@@ -48,6 +48,7 @@ function playNextRandomSong() {
 
     if (nextSong) {
         nextSong.pause(); // Pause the currently playing song
+        nextSong.currentTime = 0;
     }
 
     nextSong = songs[currentSongIndex]; // Assign the next song to nextSong variable

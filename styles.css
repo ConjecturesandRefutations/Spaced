@@ -159,7 +159,7 @@ html, body, .opening-section {
     right: 10px;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1285px){
 .circle-container {
     width: 180px;
     height: 180px;
