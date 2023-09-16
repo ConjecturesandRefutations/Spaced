@@ -24,11 +24,12 @@ const xtal = new Audio('./audio/xtal.mp3');
 const helisophan = new Audio('./audio/heliosphan.mp3');
 const binary = new Audio('./audio/binary.mp3');
 const clipper = new Audio('./audio/clipper.mp3');
+const stone = new Audio('./audio/stone.mp3');
 
 let songs = [closing, hope, journey, lawn, hannah, vivid, 
 closer, spacedOut, space, march, mochas, shadowed, water,
 adrift, callisto, dragon, emos, radiohead, xtal,
-helisophan, binary, clipper];
+helisophan, binary, clipper, stone];
 
 let nextSong;
 
