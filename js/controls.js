@@ -2,8 +2,8 @@ class Ship {
   constructor() {
     this.x = canvas.width / 2;
     this.y = canvas.height / 1.25;
-    this.width = 30;
-    this.height = 50;
+    this.width = 50;
+    this.height = 70;
     this.img = './images/spaceship.png';
     this.upButtonDown = false;
     this.downButtonDown = false;
