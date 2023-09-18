@@ -158,6 +158,8 @@ html, body, .opening-section {
 
   .circle-container{
     display: none;
+    position: absolute;
+    bottom: 0;
   }
 
 .arrow-button {
@@ -267,8 +269,6 @@ html, body, .opening-section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
     margin-top: -15px;
     left: 50%;
     transform: translate(-50%);  
