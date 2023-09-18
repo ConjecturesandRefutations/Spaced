@@ -96,6 +96,8 @@ function updateCanvas() {
 
   currentShip.drawShip(); // redraw the ship at its current position
 
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
 }
