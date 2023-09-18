@@ -36,12 +36,13 @@ html, body, .opening-section {
 }
 
 #start-button-two{
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 85%;
     transform: translate(-50%);
     cursor: pointer;
     max-width: 350px;
+    margin-top: 5px;
 }
 
 #start-button:hover, #start-button-two:hover{
@@ -228,6 +229,7 @@ html, body, .opening-section {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin-bottom: 5px;
 }
 
 .location-checkbox,
@@ -302,6 +304,9 @@ html, body, .opening-section {
     .spaceshipOneImg,.spaceshipTwoImg,.spaceshipThreeImg{
         max-width: 70px;
         height: 100px;
+    }
+    #start-button-two{
+    bottom: 0;
     }
   }
 
