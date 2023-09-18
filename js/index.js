@@ -64,6 +64,7 @@ window.onload = () => {
 };
 
 function startGame() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   currentGame = new Game();
 
   // Instantiate a new ship
@@ -95,8 +96,6 @@ function updateCanvas() {
   ctx.drawImage(background, backgroundX + canvas.width, 0, canvas.width, canvas.height);
 
   currentShip.drawShip(); // redraw the ship at its current position
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
