@@ -1,7 +1,6 @@
 // Key Variables
 let background = new Image();
 let backgroundX = 0;
-background.src = "./images/game.jpg";
 let homepaged = false;
 let currentShip;
 
@@ -12,6 +11,10 @@ canvas.style.display = 'none';
 
 // Opening Section
 const openingSection = document.querySelector('.opening-section');
+
+// Setup Section
+const setupSection = document.querySelector('.setup-section');
+setupSection.style.display = 'none';
 
 //Mobile Arrows
 const arrows = document.querySelector('.circle-container')
@@ -27,6 +30,7 @@ const homeButton = document.querySelector('.homepage');
   volumeIcon.classList.remove('fa', 'fa-volume-up');
   volumeIcon.classList.add('fa', 'fa-volume-mute');
   openingSection.style.display = '';
+  setupSection.style.display = 'none';
   canvas.style.display = 'none';
   audioControls.style.display = 'none';
   currentShip.x = canvas.width / 2;
@@ -35,18 +39,26 @@ const homeButton = document.querySelector('.homepage');
   cancelAnimationFrame(animationID); // Stop the animation loop
 }
 
+//Original Button
+const startButtonOne = document.getElementById('start-button');
+startButtonOne.onclick = () => {
+  opening.pause();
+  playNextRandomSong();
+  opening.currentTime = 0;
+  openingSection.style.display = 'none';
+  setupSection.style.display = '';
+};
+
 // Start Button
 let animationID; // Store the animation ID
 window.onload = () => {
-  const startButton = document.getElementById('start-button');
+  const startButton = document.getElementById('start-button-two');
   startButton.onclick = () => {
-    opening.pause();
-    opening.currentTime = 0;
-    playNextRandomSong();
     openingSection.style.display = 'none';
+    setupSection.style.display = 'none';
     canvas.style.display = '';
-    audioControls.style.display = '';
     arrows.style.display = '';
+    audioControls.style.display = '';
     startGame();
   };
 };
