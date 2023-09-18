@@ -268,7 +268,7 @@ html, body, .opening-section {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 0%;
+    bottom: 0;
     margin-top: -15px;
     left: 50%;
     transform: translate(-50%);  
