@@ -18,6 +18,57 @@
         <img src="images/Lift-Off.png" id="start-button" alt="">
     </section>
 
+    <section class="setup-section">
+        <img src="images/Setup.png" id="setup" alt="setup">
+        <div class="selections">
+            <div class="locations">
+                <img src="images/select-location.png" id="select-location" alt="launch">
+                <div class="locationImages">
+                    <label for="locationOne">
+                        <input type="radio" name="location" value="locationOne" class="location-checkbox locationOne" id="locationOne" onclick="handleLocationChange()" checked>
+                        <img src="images/opening.jpg" alt="location" class="locationOneImg"/>
+                        <div class="checkmark"></div>
+                    </label>
+                    <label for="locationTwo">
+                        <input type="radio" name="location" value="locationTwo" class="location-checkbox locationTwo" id="locationTwo" onclick="handleLocationChange()">
+                        <img src="images/game.jpg" alt="location" class="locationTwoImg"/>
+                        <div class="checkmark"></div>
+                    </label>
+                    <label for="locationThree">
+                        <input type="radio" name="location" value="locationThree" class="location-checkbox locationThree" id="locationThree" onclick="handleLocationChange()">
+                        <img src="images/location.jpg" alt="location" class="locationThreeImg"/>
+                        <div class="checkmark"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="ships">
+                <img src="images/select-ship.png" id="select-ship" alt="launch">
+                <div class="shipImages">
+                    <label for="spaceshipOne">
+                        <input type="radio" name="ship" value="shipOne" class="ship-checkbox spaceshipOne" id="spaceshipOne" onclick="handleShipChange(event)" checked>
+                        <img src="images/spaceship.png" alt="spaceship spaceshipOne" class="spaceshipOneImg"/>
+                        <div class="checkmark"></div>
+                    </label>
+                    <label for="spaceshipTwo">
+                        <input type="radio" name="ship" value="shipTwo" class="ship-checkbox spaceshipTwo" id="spaceshipTwo" onclick="handleShipChange(event)">
+                        <img src="images/blueSpaceship.png" alt="spaceship" class="spaceshipTwoImg"/>
+                        <div class="checkmark"></div>
+                    </label>
+                    <label for="spaceshipThree">
+                        <input type="radio" name="ship" value="shipThree" class="ship-checkbox spaceshipThree" id="spaceshipThree" onclick="handleShipChange(event)">
+                        <img src="images/redSpaceship.png" alt="spaceship" class="spaceshipThreeImg"/>
+                        <div class="checkmark"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <img src="images/Launch.png" id="start-button-two" alt="launch">
+    </section>
+    
+    
+    
+    
+
     <section id="canvas-containter">
         
         <canvas id="canvas" width="1300" height="600"></canvas> 
@@ -39,6 +90,7 @@
         </div>
 
     <script src="js/index.js"></script>
+    <script src="js/selections.js"></script>
     <script src="js/controls.js"></script>
     <script src="js/game.js"></script>
     <script src="js/audio.js"></script>

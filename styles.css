@@ -18,15 +18,33 @@ html, body, .opening-section {
     width: 500px;
 }
 
+#setup{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+    width: 500px;
+}
+
 #start-button{
     position: absolute;
     left: 50%;
     top: 70%;
     transform: translate(-50%);
     cursor: pointer;
+    max-width: 350px;
 }
 
-#start-button:hover{
+#start-button-two{
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%);
+    cursor: pointer;
+    max-width: 350px;
+}
+
+#start-button:hover, #start-button-two:hover{
     background-color: black;
 }
 
@@ -125,6 +143,18 @@ html, body, .opening-section {
     margin-top: 5px;
   }
 
+  .setup-section{
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background-image: url('images/setup.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+  }
+
   .circle-container{
     display: none;
   }
@@ -158,6 +188,73 @@ html, body, .opening-section {
 .right {
     right: 10px;
 }
+.selections{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+
+#select-location{
+    max-width: 500px;   
+    max-height: 50px; 
+}
+#select-ship{
+    max-width: 400px;
+    max-height: 50px;    
+}
+
+.locationImages{
+    display: flex;
+    flex-direction: row;
+}
+
+.locationOneImg,.locationTwoImg,.locationThreeImg{
+    width: 200px;
+    height: 170px;
+    cursor: pointer;
+}
+
+.spaceshipOneImg,.spaceshipTwoImg,.spaceshipThreeImg{
+    max-width: 100px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.shipImages{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.location-checkbox,
+.ship-checkbox {
+    display: none;
+}
+
+.checkmark {
+    width: 20px; 
+    height: 20px; 
+    background-color: lightgreen;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+/* Show the checkmark when the checkbox is checked */
+.location-checkbox:checked + .locationOneImg + .checkmark,
+.location-checkbox:checked + .locationTwoImg + .checkmark,
+.location-checkbox:checked + .locationThreeImg + .checkmark,
+.ship-checkbox:checked + .spaceshipOneImg + .checkmark,
+.ship-checkbox:checked + .spaceshipTwoImg + .checkmark,
+.ship-checkbox:checked + .spaceshipThreeImg + .checkmark {
+    display: block;
+}
+
+
 
 @media(max-width: 1285px){
 .circle-container {
@@ -175,6 +272,39 @@ html, body, .opening-section {
     transform: translate(-50%);  
 }
 }
+
+@media(max-width: 1205px){
+    .selections{
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    #setup{
+        display: none;
+    }
+}
+
+@media(max-width:610px){
+    #select-location{
+        max-width: 300px;
+    }
+    #select-ship{
+        max-width: 250px;
+    }
+    .locationOneImg,.locationTwoImg,.locationThreeImg{
+        width: 150px;
+        height: 120px;
+    }
+    .spaceshipOneImg,.spaceshipTwoImg,.spaceshipThreeImg{
+        max-width: 70px;
+        height: 100px;
+    }
+  }
+
 
 @media(max-width:520px){
     .audio-controls{
@@ -199,11 +329,11 @@ html, body, .opening-section {
   }
 
 @media(max-width:500px){
-    #title{
+    #title,#setup{
         max-width: 350px;
     }
-    #start-button{
-        max-width: 300px;
+    #start-button,#start-button-two{
+        max-width: 250px;
     }
     .audio-controls{
         left: 20px
@@ -218,13 +348,17 @@ html, body, .opening-section {
     #volume-icon{
       font-size: 45px;
     }
+    .locationImages{
+        flex-wrap: wrap;
+    }
+
     }
 
 @media(max-width:400px){
-    #title{
+    #title,#setup{
         max-width: 300px;
     }
-    #start-button{
+    #start-button,#start-button-two{
         max-width: 250px;
     }
 }
@@ -247,10 +381,10 @@ html, body, .opening-section {
     font-size: 40px;
     margin-top: 10px;
   }
-  #title{
+  #title,#setup{
     max-width: 250px;
 }
-#start-button{
+#start-button,#start-button-two{
     max-width: 200px;
 }
 #volume-icon{
@@ -263,14 +397,26 @@ html, body, .opening-section {
     .audio-controls,.homepage{
         left: 5px;
     }
+    .selections{
+        left: 0;
+        transform: translate(0);
+      }
+
 }
 
 @media(max-width:280px){
-    #title{
+    #title,#setup{
         max-width: 230px;
     }
-    #start-button{
+    #start-button,#start-button-two{
         max-width: 200px;
+    }
+    .locationOneImg,.locationTwoImg,.locationThreeImg{
+        width: 130px;
+        height: 100px;
+    }
+    #select-location{
+        width: 270px;
     }
 }
     

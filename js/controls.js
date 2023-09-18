@@ -4,7 +4,7 @@ class Ship {
     this.y = canvas.height / 1.25;
     this.width = 50;
     this.height = 70;
-    this.img = './images/spaceship.png';
+    this.img = this.getImagePath();
     this.upButtonDown = false;
     this.downButtonDown = false;
     this.leftButtonDown = false;
@@ -28,6 +28,19 @@ class Ship {
     this.throttledLeftStart = this.throttle(() => this.startMovingShip('left'), this.throttleDelay);
     this.throttledRightStart = this.throttle(() => this.startMovingShip('right'), this.throttleDelay);
 
+  }
+
+  getImagePath() {
+    // Return the appropriate image path based on the currentColor
+    switch (currentColor) {
+      case 'shipOne':
+        return './images/spaceship.png';
+      case 'shipTwo':
+        return './images/blueSpaceship.png';
+      case 'shipThree':
+      default:
+        return './images/redSpaceship.png';
+    }
   }
 
   drawShip() {
