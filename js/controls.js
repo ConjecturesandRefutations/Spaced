@@ -11,6 +11,7 @@ class Ship {
     this.leftButtonDown = false;
     this.rightButtonDown = false;
     this.throttleDelay = 100; // Keyboard Throttle Delay (Milliseconds)
+    this.rocketFired = false;
 
     // Select the mobile-controls buttons
     this.leftButton = document.getElementById('left-button');
@@ -118,6 +119,9 @@ class Ship {
       // right arrow key
       this.rightButtonDown = false;
       this.stopMovingShip();
+    } else if (event.keyCode === 32) {
+      // space key
+      this.rocketFired = false;
     }
   }
 
@@ -157,8 +161,11 @@ class Ship {
     }
   }
   shootRocket() {
-    const rocket = new Rocket(this.x, this.y, this.angle);
-    currentGame.rockets.push(rocket);
+    if (!this.rocketFired) {
+      const rocket = new Rocket(this.x, this.y, this.angle);
+      currentGame.rockets.push(rocket);
+      this.rocketFired = true; // Set the flag to true
+    }
   }
 }
 
