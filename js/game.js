@@ -5,5 +5,6 @@ class Game {
         this.bonuses = [];
         this.score = 0;
         this.level = 1;
+        this.rockets = [];
     }
 }
