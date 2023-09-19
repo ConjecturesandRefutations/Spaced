@@ -4,6 +4,7 @@ class Ship {
     this.y = canvas.height / 1.25;
     this.width = 50;
     this.height = 70;
+    this.angle = 0;
     this.img = this.getImagePath();
     this.upButtonDown = false;
     this.downButtonDown = false;
@@ -79,10 +80,6 @@ class Ship {
     // Update the ship's current direction
     this.angle = angle;
   }
-  
-  
-  
-  
 
   handleKeyDown(event) {
     if (event.keyCode === 38) {
@@ -158,6 +155,10 @@ class Ship {
     if (!this.upButtonDown && !this.downButtonDown && !this.leftButtonDown && !this.rightButtonDown) {
       cancelAnimationFrame(this.requestAnimationFrame);
     }
+  }
+  shootRocket() {
+    const rocket = new Rocket(this.x, this.y, this.angle);
+    currentGame.rockets.push(rocket);
   }
 }
 
@@ -254,3 +255,10 @@ function addTouchListeners() {
     currentShip.stopMovingShip();
   };
 }
+
+document.addEventListener('keydown', (event) => {
+  if (event.keyCode === 32) {
+    // Spacebar key
+    currentShip.shootRocket();
+  }
+});

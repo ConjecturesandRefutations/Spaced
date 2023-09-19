@@ -191,6 +191,11 @@ html, body, .opening-section {
 .right {
     right: 10px;
 }
+
+#shoot{
+    left: 200px;
+}
+
 .selections{
     position: absolute;
     left: 50%;

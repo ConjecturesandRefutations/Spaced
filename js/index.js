@@ -66,6 +66,7 @@ window.onload = () => {
 function startGame() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   currentGame = new Game();
+  currentGame.rockets = [];
 
   // Instantiate a new ship
   currentShip = new Ship();
@@ -96,6 +97,19 @@ function updateCanvas() {
   ctx.drawImage(background, backgroundX + canvas.width, 0, canvas.width, canvas.height);
 
   currentShip.drawShip(); // redraw the ship at its current position
+
+  // Update and draw rockets
+  for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
+    const rocket = currentGame.rockets[i];
+
+    if (rocket.isAlive) {
+      rocket.update();
+      rocket.draw();
+    } else {
+      // Remove dead rockets from the array
+      currentGame.rockets.splice(i, 1);
+    }
+  }
 
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
