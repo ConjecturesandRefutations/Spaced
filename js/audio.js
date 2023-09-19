@@ -142,3 +142,19 @@ muteButton.addEventListener('click', () => {
 const nextButton = document.getElementById('next-button');
 
 nextButton.addEventListener('click', playNextRandomSong);
+
+function preventSpacebarClick(buttonElement) {
+  buttonElement.addEventListener("click", function (e) {
+  });
+
+  // Prevent the spacebar from triggering a click event on the button
+  buttonElement.addEventListener("keydown", function (e) {
+    if (e.key === " ") {
+      e.preventDefault();
+    }
+  });
+}
+
+// Apply the behavior to both buttons
+preventSpacebarClick(muteButton);
+preventSpacebarClick(nextButton);
