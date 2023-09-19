@@ -46,8 +46,43 @@ class Ship {
   drawShip() {
     const shipImg = new Image();
     shipImg.src = this.img;
-    ctx.drawImage(shipImg, this.x, this.y, this.width, this.height);
+  
+    // Calculate the angle of rotation based on the ship's current direction
+    let angle = this.angle;
+  
+    // Calculate diagonal movement angles when both up and right or down and left buttons are pressed
+    if (this.upButtonDown && this.rightButtonDown) {
+      angle = Math.PI / 4; // Diagonal up-right
+    } else if (this.downButtonDown && this.leftButtonDown) {
+      angle = (-3 * Math.PI) / 4; // Diagonal up-left
+    } else if (this.downButtonDown && this.rightButtonDown) {
+      angle = (3 * Math.PI) / 4; // Diagonal down-left
+    } else if (this.upButtonDown && this.leftButtonDown) {
+      angle = (-Math.PI) / 4; // Diagonal up-left
+    } else if (this.upButtonDown) {
+      angle = 0;
+    } else if (this.downButtonDown) {
+      angle = Math.PI;
+    } else if (this.leftButtonDown) {
+      angle = -Math.PI / 2;
+    } else if (this.rightButtonDown) {
+      angle = Math.PI / 2;
+    }
+  
+    // Translate and rotate the ship's image
+    ctx.save();
+    ctx.translate(this.x + this.width / 2, this.y + this.height / 2);
+    ctx.rotate(angle);
+    ctx.drawImage(shipImg, -this.width / 2, -this.height / 2, this.width, this.height);
+    ctx.restore();
+  
+    // Update the ship's current direction
+    this.angle = angle;
   }
+  
+  
+  
+  
 
   handleKeyDown(event) {
     if (event.keyCode === 38) {

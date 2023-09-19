@@ -2,6 +2,7 @@
 const opening = new Audio('./audio/opening.mp3');
 
 //gameplay music
+const hearts = new Audio('./audio/hearts.mp3');
 const closing = new Audio('./audio/closing.mp3');
 const hope = new Audio('./audio/hope.mp3');
 const journey = new Audio('./audio/journey.mp3');
@@ -11,7 +12,6 @@ const march = new Audio('./audio/march.mp3');
 const mochas = new Audio('./audio/mochas.mp3');
 const shadowed = new Audio('./audio/shadowed.mp3');
 const water = new Audio('./audio/water.mp3');
-const adrift = new Audio('./audio/adrift.mp3');
 const callisto = new Audio('./audio/callisto.mp3');
 const radiohead = new Audio('./audio/radiohead.mp3');
 const xtal = new Audio('./audio/xtal.mp3');
@@ -27,8 +27,9 @@ const brazil = new Audio('./audio/brazil.mp3');
 const telepath = new Audio('./audio/telepath.mp3');
 const telephasic = new Audio('./audio/telephasic.mp3');
 
-let songs = [closing, hope, journey, lawn, vivid, march, mochas, shadowed, water,
-adrift, callisto, radiohead, xtal,
+let songs = [hearts, closing, hope, journey, lawn, vivid,
+march, mochas, shadowed, water,
+callisto, radiohead, xtal,
 helisophan, binary, clipper, stone, alpha, vastrond,
 loved, blanked, brazil, telepath, telephasic];
 
@@ -65,9 +66,6 @@ function playNextRandomSong() {
   nextSong.play();
 }
 
-
-  
-
 let openingAudioPlaying = false;
 
 // Function to start playing the opening audio
@@ -92,6 +90,12 @@ function pauseOpeningAudio() {
 
 const openingAudio = document.querySelector('.play-music');
 const volumeIcon = document.getElementById('volume-icon');
+//Audio Controls
+const audioControls = document.querySelector('.utility-buttons');
+audioControls.style.display = 'none';
+
+//Mute Button
+const muteButton = document.getElementById('mute-button');
 
 // Click event listener to the opening audio element
 openingAudio.addEventListener('click', () => {
@@ -113,7 +117,6 @@ opening.addEventListener('ended', () => {
   volumeIcon.classList.add('fa', 'fa-volume-mute');
 });
 
-
 //Pause in-game music
 let gameMusicPlaying = true;
 
@@ -128,14 +131,6 @@ function pauseGameMusic() {
       muteButton.innerHTML = '<img id="play" src="./images/play.png"/>'; 
     }
   }
-  
-
-//Audio Controls
-const audioControls = document.querySelector('.utility-buttons');
-audioControls.style.display = 'none';
-
-//Mute Button
-const muteButton = document.getElementById('mute-button');
 
 // Mute event listener to the opening audio element
 muteButton.addEventListener('click', () => {
@@ -147,5 +142,3 @@ muteButton.addEventListener('click', () => {
 const nextButton = document.getElementById('next-button');
 
 nextButton.addEventListener('click', playNextRandomSong);
-
-  
