@@ -64,15 +64,18 @@ class Rocket {
   
   //For mobile
   const shootButton = document.getElementById('shoot');
+  preventSpacebarClick(shootButton);
 
   //Event listener mouse clicks on rocket button:
   shootButton.addEventListener('click', () => {
     currentShip.shootRocket();
+    currentShip.rocketFired = false;
   });
 
   //Event listener to handle touchevents on rocket button:
   shootButton.addEventListener('touchstart', (event) => {
     event.preventDefault(); // Prevent default touch behavior (e.g., scrolling)
     currentShip.shootRocket();
+    currentShip.rocketFired = false;
   });
   
