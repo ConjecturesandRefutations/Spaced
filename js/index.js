@@ -4,6 +4,11 @@ let backgroundX = 0;
 let homepaged = false;
 let currentShip;
 let obstaclesFrequency = 0; // support the logic for generating obstacles
+let obstacleSpeed = 3;
+let divisor = 60;
+let lastDivisorDecreaseTime = 0;
+let lastSpeedIncreaseTime = 0;
+let startTime = 0;
 
 // Canvas
 const canvas = document.getElementById('canvas');
@@ -66,6 +71,7 @@ window.onload = () => {
 
 function startGame() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  startTime = Date.now();
   currentGame = new Game();
   currentGame.rockets = [];
 
@@ -83,6 +89,9 @@ function startGame() {
 }
 
 function updateCanvas() {
+  const currentTime = Date.now();
+  const elapsedTimeInSeconds = Math.floor((currentTime - startTime) / 1000); // Calculate elapsed time in seconds
+
   ctx.clearRect(0, 0, canvas.width, canvas.height); // clear canvas
 
   // Scroll the background to the left
@@ -103,17 +112,32 @@ function updateCanvas() {
   // Update and draw rockets
   for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
     const rocket = currentGame.rockets[i];
-
+  
     if (rocket.isAlive) {
       rocket.update();
       rocket.draw();
+  
+      // Check for collisions with obstacles
+      for (let j = currentGame.obstacles.length - 1; j >= 0; j--) {
+        const obstacle = currentGame.obstacles[j];
+  
+        if (obstacle.collidesWith(rocket.x, rocket.y)) {
+          // Remove the rocket and obstacle from their respective arrays
+          currentGame.rockets.splice(i, 1);
+          currentGame.obstacles.splice(j, 1);
+  
+          // A flag in the obstacle to indicate it was hit and handle it accordingly
+          obstacle.wasHit = true;
+  
+        }
+      }
     } else {
       // Remove dead rockets from the array
       currentGame.rockets.splice(i, 1);
     }
   }
-
-  if (obstaclesFrequency % 60 === 1) {
+  
+  if (obstaclesFrequency % divisor === 1) {
     // Determine which side to spawn the obstacle
     const side = Math.floor(Math.random() * 4); // 0 for top, 1 for right, 2 for bottom, 3 for left
   
@@ -161,16 +185,16 @@ function updateCanvas() {
     // Move obstacles based on the direction they entered
     switch (obstacle.direction) {
       case 0: // Top
-        obstacle.y += 3;
+        obstacle.y += obstacleSpeed;
         break;
       case 1: // Right
-        obstacle.x -= 3;
+        obstacle.x -= obstacleSpeed;
         break;
       case 2: // Bottom
-        obstacle.y -= 3;
+        obstacle.y -= obstacleSpeed;
         break;
       case 3: // Left
-        obstacle.x += 3;
+        obstacle.x += obstacleSpeed;
         break;
     }
   
@@ -186,9 +210,20 @@ function updateCanvas() {
     }
   }
   
-  
-  console.log(currentGame.obstacles.length)
+  if (elapsedTimeInSeconds >= 20 && currentTime - lastDivisorDecreaseTime >= 20000) {
+    //making the game progressively harder
+    obstacleSpeed += 0.5;
+    if (divisor > 2) {
+      divisor -= 2;
+    }
+    lastDivisorDecreaseTime = currentTime; // Update the last decrease time
+    lastSpeedIncreaseTime = currentTime; // Update the last decrease time
+  }
+
+  console.log(obstacleSpeed);
 
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
 }
+
+
