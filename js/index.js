@@ -23,15 +23,23 @@ const setupSection = document.querySelector('.setup-section');
 setupSection.style.display = 'none';
 
 //Mobile Arrows
-const arrows = document.querySelector('.circle-container')
-arrows.style.display = 'none'
+const arrows = document.querySelector('.circle-container');
+;arrows.style.display = 'none'
+
+//Score Section
+const score = document.querySelector('.score');
+score.style.display = 'none';
+const scoreValue = document.getElementById('score-value');
+
+
 
 // Homepage Button
 const homeButton = document.querySelector('.homepage');
   homeButton.onclick = () => {
   nextSong.pause();
   openingAudioPlaying = false;
-  arrows.style.display = 'none'
+  arrows.style.display = 'none';
+  score.style.display = 'none';
   muteButton.innerHTML = '<img id="mute" src="./images/mute.png"/>';
   volumeIcon.classList.remove('fa', 'fa-volume-up');
   volumeIcon.classList.add('fa', 'fa-volume-mute');
@@ -67,6 +75,7 @@ window.onload = () => {
     canvas.style.display = '';
     arrows.style.display = '';
     audioControls.style.display = '';
+    score.style.display = '';
     startGame();
   };
 };
@@ -127,6 +136,8 @@ function updateCanvas() {
           // Display explosion and remove the rocket and obstacle from their respective arrays
           currentGame.rockets.splice(i, 1);
           obstacle.destroy();
+          currentGame.score++;
+          scoreValue.innerText = currentGame.score;
   
           // A flag in the obstacle to indicate it was hit and handle it accordingly
           // obstacle.wasHit = true; (already set in destroy method)
@@ -143,8 +154,8 @@ function updateCanvas() {
     const side = Math.floor(Math.random() * 4); // 0 for top, 1 for right, 2 for bottom, 3 for left
   
     let randomObstacleX, randomObstacleY;
-    let randomObstacleWidth = 50;
-    let randomObstacleHeight = 70;
+    let randomObstacleWidth = Math.floor(Math.random() * (150 - 30 + 1)) + 30;;
+    let randomObstacleHeight = Math.floor(Math.random() * (180 - 50 + 1)) + 50;;
   
     // Set initial position based on the chosen side
     switch (side) {
@@ -220,15 +231,15 @@ function updateCanvas() {
   
   if (elapsedTimeInSeconds >= 20 && currentTime - lastDivisorDecreaseTime >= 20000) {
     //making the game progressively harder
-    obstacleSpeed += 0.5;
-    if (divisor > 2) {
-      divisor -= 2;
+    obstacleSpeed += 0.2;
+    if (divisor > 3) {
+      divisor -= 3;
     }
     lastDivisorDecreaseTime = currentTime; // Update the last decrease time
     lastSpeedIncreaseTime = currentTime; // Update the last decrease time
   }
 
-  console.log(obstacleSpeed);
+  console.log(currentGame.score);
 
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);

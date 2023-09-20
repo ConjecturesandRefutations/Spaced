@@ -263,7 +263,22 @@ html, body, .opening-section {
     display: block;
 }
 
+.score{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+}
 
+#score{
+    max-width: 150px;
+    margin-right: 5px;
+}
+
+#score-value{
+    color: orangered;
+    font-size: 50px;
+    font-weight: bold;
+}
 
 @media(max-width: 1285px){
 .circle-container {
@@ -312,6 +327,15 @@ html, body, .opening-section {
     }
     #start-button-two{
     bottom: 0;
+    }
+  }
+
+  @media(max-width:600px){
+    #score{
+        max-width: 100px;
+    }
+    #score-value{
+        font-size: 30px;
     }
   }
 
@@ -371,6 +395,10 @@ html, body, .opening-section {
     #start-button,#start-button-two{
         max-width: 250px;
     }
+    .score{
+        bottom: 50%;
+        transform: translate(0,50%);
+    }
 }
 
 @media(max-width:365px){
@@ -411,7 +439,9 @@ html, body, .opening-section {
         left: 0;
         transform: translate(0);
       }
-
+      .score{
+        left: 5px;
+    }
 }
 
 @media(max-width:280px){
