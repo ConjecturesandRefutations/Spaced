@@ -3,6 +3,7 @@ let background = new Image();
 let backgroundX = 0;
 let homepaged = false;
 let currentShip;
+let obstaclesFrequency = 0; // support the logic for generating obstacles
 
 // Canvas
 const canvas = document.getElementById('canvas');
@@ -97,6 +98,7 @@ function updateCanvas() {
   ctx.drawImage(background, backgroundX + canvas.width, 0, canvas.width, canvas.height);
 
   currentShip.drawShip(); // redraw the ship at its current position
+  obstaclesFrequency++;
 
   // Update and draw rockets
   for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
@@ -110,6 +112,82 @@ function updateCanvas() {
       currentGame.rockets.splice(i, 1);
     }
   }
+
+  if (obstaclesFrequency % 60 === 1) {
+    // Determine which side to spawn the obstacle
+    const side = Math.floor(Math.random() * 4); // 0 for top, 1 for right, 2 for bottom, 3 for left
+  
+    let randomObstacleX, randomObstacleY;
+    let randomObstacleWidth = 50;
+    let randomObstacleHeight = 70;
+  
+    // Set initial position based on the chosen side
+    switch (side) {
+      case 0: // Top
+        randomObstacleX = Math.floor(Math.random() * canvas.width);
+        randomObstacleY = -randomObstacleHeight;
+        break;
+      case 1: // Right
+        randomObstacleX = canvas.width;
+        randomObstacleY = Math.floor(Math.random() * canvas.height);
+        break;
+      case 2: // Bottom
+        randomObstacleX = Math.floor(Math.random() * canvas.width);
+        randomObstacleY = canvas.height;
+        break;
+      case 3: // Left
+        randomObstacleX = -randomObstacleWidth;
+        randomObstacleY = Math.floor(Math.random() * canvas.height);
+        break;
+    }
+  
+    let newObstacle = new Obstacle(
+      randomObstacleX,
+      randomObstacleY,
+      randomObstacleWidth,
+      randomObstacleHeight
+    );
+    
+    // Set the direction for the obstacle
+    newObstacle.direction = side;
+  
+    currentGame.obstacles.push(newObstacle);
+  }
+  
+  for (let i = 0; i < currentGame.obstacles.length; i++) {
+    const obstacle = currentGame.obstacles[i];
+    obstacle.drawObstacle();
+  
+    // Move obstacles based on the direction they entered
+    switch (obstacle.direction) {
+      case 0: // Top
+        obstacle.y += 3;
+        break;
+      case 1: // Right
+        obstacle.x -= 3;
+        break;
+      case 2: // Bottom
+        obstacle.y -= 3;
+        break;
+      case 3: // Left
+        obstacle.x += 3;
+        break;
+    }
+  
+    // Logic for removing obstacles
+    if (
+      currentGame.obstacles.length > 0 &&
+      (obstacle.x >= canvas.width ||
+        obstacle.x + obstacle.width <= 0 ||
+        obstacle.y >= canvas.height ||
+        obstacle.y + obstacle.height <= 0)
+    ) {
+      currentGame.obstacles.splice(i, 1); // remove that obstacle from the array
+    }
+  }
+  
+  
+  console.log(currentGame.obstacles.length)
 
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
