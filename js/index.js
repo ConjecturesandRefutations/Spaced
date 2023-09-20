@@ -42,6 +42,8 @@ const homeButton = document.querySelector('.homepage');
   currentShip.x = canvas.width / 2;
   currentShip.y = canvas.height / 1.25;
   backgroundX = 0;
+  obstacleSpeed = 3;
+  divisor = 60;
   cancelAnimationFrame(animationID); // Stop the animation loop
 }
 
@@ -122,13 +124,12 @@ function updateCanvas() {
         const obstacle = currentGame.obstacles[j];
   
         if (obstacle.collidesWith(rocket.x, rocket.y)) {
-          // Remove the rocket and obstacle from their respective arrays
+          // Display explosion and remove the rocket and obstacle from their respective arrays
           currentGame.rockets.splice(i, 1);
-          currentGame.obstacles.splice(j, 1);
+          obstacle.destroy();
   
           // A flag in the obstacle to indicate it was hit and handle it accordingly
-          obstacle.wasHit = true;
-  
+          // obstacle.wasHit = true; (already set in destroy method)
         }
       }
     } else {
@@ -180,7 +181,14 @@ function updateCanvas() {
   
   for (let i = 0; i < currentGame.obstacles.length; i++) {
     const obstacle = currentGame.obstacles[i];
-    obstacle.drawObstacle();
+  
+    if (obstacle.wasHit && obstacle.currentExplosionFrame >= obstacle.explosionFrames) {
+      // Remove obstacles after the explosion animation is finished
+      currentGame.obstacles.splice(i, 1);
+    } else {
+      obstacle.drawObstacle();
+    }
+  
   
     // Move obstacles based on the direction they entered
     switch (obstacle.direction) {
