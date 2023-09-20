@@ -1,6 +1,10 @@
 //opening music
 const opening = new Audio('./audio/opening.mp3');
 
+//sounf effects
+const explosion = new Audio('./audio/asteroid.mp3');
+const laser = new Audio('./audio/laser.mp3');
+
 //gameplay music
 const hearts = new Audio('./audio/hearts.mp3');
 const closing = new Audio('./audio/closing.mp3');

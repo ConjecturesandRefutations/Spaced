@@ -138,6 +138,10 @@ function updateCanvas() {
           obstacle.destroy();
           currentGame.score++;
           scoreValue.innerText = currentGame.score;
+
+          if (gameMusicPaused) {
+          explosion.play();
+          };
   
           // A flag in the obstacle to indicate it was hit and handle it accordingly
           // obstacle.wasHit = true; (already set in destroy method)
