@@ -122,7 +122,7 @@ html, body, .opening-section,.end-game {
   #volume-icon{margin-top: 20px;}
 
   .utility-buttons{
-    margin-top: 10px;
+    margin-top: 21px;
   }
 
 .audio-controls{
@@ -393,6 +393,10 @@ html, body, .opening-section,.end-game {
         left: 100px;
       }
 
+      .utility-buttons{
+        margin-top: 15px;
+      }
+
   }
 
   @media(max-width:600px){
@@ -533,5 +537,3 @@ html, body, .opening-section,.end-game {
         width: 270px;
     }
 }
-    
-    

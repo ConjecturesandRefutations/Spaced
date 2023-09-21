@@ -107,6 +107,7 @@ const restartButton = document.getElementById('restart');
   resetScore();
   GameOver.style.display = 'none';
   canvas.style.display = '';
+  audioControls.style.display = 'block';
   startGame();
 }
 
@@ -294,7 +295,7 @@ function endGame(){
   arrows.style.display = 'none';
   canvas.style.display = 'none';
   audioControls.style.display = 'inline';
-}
+ }
 
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
