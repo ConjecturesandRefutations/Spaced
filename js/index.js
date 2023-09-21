@@ -302,7 +302,7 @@ function endGame(){
 
 function detectCollision(obstacle) {
   // Define the leniency value for the corners of the asteroid
-  const cornerLeniency = 5;
+  const cornerLeniency = 1;
 
   // Calculate the ship's boundaries
   const shipLeft = currentShip.x;
