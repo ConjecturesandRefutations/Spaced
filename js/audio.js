@@ -7,12 +7,6 @@ const laser = new Audio('./audio/laser.mp3');
 
 //gameplay music
 const hearts = new Audio('./audio/hearts.mp3');
-const closing = new Audio('./audio/closing.mp3');
-const journey = new Audio('./audio/journey.mp3');
-const lawn = new Audio('./audio/lawn.mp3');
-const march = new Audio('./audio/march.mp3');
-const shadowed = new Audio('./audio/shadowed.mp3');
-const callisto = new Audio('./audio/callisto.mp3');
 const radiohead = new Audio('./audio/radiohead.mp3');
 const xtal = new Audio('./audio/xtal.mp3');
 const helisophan = new Audio('./audio/heliosphan.mp3');
@@ -30,12 +24,16 @@ const pangaea = new Audio('./audio/pangaea.mp3');
 const minus = new Audio('./audio/minus.mp3');
 const QKThr = new Audio('./audio/QKThr.mp3');
 const kid = new Audio('./audio/kid.mp3');
+const tenebris = new Audio('./audio/tenebris.mp3');
+const camel = new Audio('./audio/camel.mp3');
+const zodiac = new Audio('./audio/zodiac.mp3');
+const blimey = new Audio('./audio/blimey.mp3');
+const untravel = new Audio('./audio/untravel.mp3');
 
-let songs = [hearts,closing,journey,lawn,
-march,shadowed,callisto,radiohead,xtal,
-helisophan,binary,clipper,stone,alpha,vastrond,
-loved,blanked,brazil,telepath,telephasic,pangaea,
-minus,QKThr,kid];
+let songs = [hearts,radiohead,xtal,helisophan,
+binary,clipper,stone,alpha,vastrond,loved,
+blanked,brazil,telepath,telephasic,pangaea,minus,
+QKThr,kid,tenebris,camel,zodiac,blimey,untravel];
 
 let nextSong;
 
