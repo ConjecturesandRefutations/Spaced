@@ -32,6 +32,17 @@ const score = document.querySelector('.score');
 score.style.display = 'none';
 const scoreValue = document.getElementById('score-value');
 
+//Instructions Section
+const instructionSection = document.querySelector('.instruction-section');
+instructionSection.style.display = 'none';
+//Instruction Button
+const instructionButton = document.querySelector('.instruction');
+  instructionButton.onclick = () => {
+    openingSection.style.display = 'none';
+    audioControls.style.display = 'none';
+    instructionSection.style.display = '';
+}
+
 //Game Over Section
 const GameOver = document.querySelector('.end-game');
 GameOver.style.display = 'none';
@@ -51,9 +62,17 @@ const homeButton = document.querySelector('.homepage');
   setupSection.style.display = 'none';
   canvas.style.display = 'none';
   audioControls.style.display = 'none';
+  instructionSection.style.display = 'none';
   resetScore();
  
   cancelAnimationFrame(animationID); // Stop the animation loop
+}
+
+// Homepage Button
+const backButton = document.querySelector('.back');
+  backButton.onclick = () => {
+  openingSection.style.display = '';
+  instructionSection.style.display = 'none';
 }
 
 //Original Button
@@ -276,8 +295,6 @@ function endGame(){
   audioControls.style.display = 'inline';
 }
 
-console.log(divisor);
-console.log(obstacleSpeed);
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
 }

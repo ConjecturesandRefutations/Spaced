@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="preload" href="./images/spaceship.png" as="image">
+    <link rel="preload" href="./images/asteroid.png" as="image">
 </head>
 <body>
 
     <section class="opening-section">
         <article class="play-music">
-            <img id="audio-button" class="audio" src="./images/openingmusic.png"/>&ensp;<i class="fas fa-volume-mute" aria-hidden="true" id="volume-icon"></i>
+            <img class="audio" src="./images/openingmusic.png"/>&ensp;<i class="fas fa-volume-mute" aria-hidden="true" id="volume-icon"></i>
         </article>
+
         <img id="title" src="images/Spaced.png"/>
-        <img src="images/Lift-Off.png" id="start-button" alt="">
+        <img src="images/Lift-Off.png" id="start-button" alt="lift-off">
+
+        <article class="instruction">
+            <img src="./images/instructions.png" alt="instructions" id="instructions">&ensp;<i class="fa fa-info-circle" aria-hidden="true" id="instruction-icon"></i>
+        </article>
     </section>
 
     <section class="setup-section">
@@ -93,6 +99,21 @@
         <section class="end-game">
             <img src="./images/GameOver.png" alt="game over" id="GameOver">
             <img src="./images/Restart.png" alt="restart" id="restart">
+        </section>
+
+        <section class="instruction-section">
+            
+            <button class='back'><img src="images/back.png" alt="back" id="back"></button> 
+            <img src="images/instructions.png" alt="instructions" id="instruction-title">
+            <article class="instruction-text">
+                <p>The object of the game is to avoid colliding with the asteroids and to destroy as many asteroids as possible by shooting them with missiles.</p>
+                <p>For each asteroid you destroy, your score increases by 1. If your spaceship hits an asteroid, you lose.</p>
+                <h3>Desktop/Laptop Controls</h3>
+                <p>Use the arrow keys to move the spaceship. Use the spacebar to shoot rockets.</p>
+                <h3>Mobile/Tablet Controls</h3>
+                <p>Use the on-screen arrows to move the spaceship. Press the rocket icon to shoot rockets.</p>
+            </article>
+
         </section>
 
     <script src="js/index.js"></script>
