@@ -116,6 +116,7 @@ function startGame() {
   startTime = Date.now();
   currentGame = new Game();
   currentGame.rockets = [];
+  arrows.style.display='';
 
   // Instantiate a new ship
   currentShip = new Ship();

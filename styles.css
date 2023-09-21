@@ -84,14 +84,14 @@ html, body, .opening-section,.end-game {
     transform: translate(-50%);
 }
 
-#canvas{
+#canvas {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     transform-origin: top left;
 }
+
 
 .opening-section{
     left: 0;
@@ -367,6 +367,26 @@ html, body, .opening-section,.end-game {
     #start-button-two{
     bottom: 0;
     }
+    #canvas {
+        width: 100vh; 
+        height: 100vw; 
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
+        transform-origin: center center;
+    }
+    .circle-container{
+        transform: rotate(90deg) translateY(50%);
+        left: 50%;
+    }
+
+    .shoot-container {
+        transform: rotate(-90deg); /* Rotate in the opposite direction */
+      }
+      #shoot{
+        left: 100px;
+      }
+
   }
 
   @media(max-width:600px){
