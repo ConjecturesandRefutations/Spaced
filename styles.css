@@ -41,6 +41,8 @@ html, body, .opening-section,.end-game {
     transform: translate(-50%);
     cursor: pointer;
     max-width: 250px;
+    border: 2px solid;
+    border-color: grey black black grey;
 }
 
 #start-button-two{
@@ -53,8 +55,12 @@ html, body, .opening-section,.end-game {
     margin-top: 5px;
 }
 
-#start-button:hover, #start-button-two:hover,#restart:hover{
+#start-button:hover, #start-button-two:hover{
     background-color: black;
+}
+
+#restart:hover{
+    background-color: transparent;
 }
 
 .audio{
