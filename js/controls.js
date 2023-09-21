@@ -1,7 +1,7 @@
 class Ship {
   constructor() {
     this.x = canvas.width / 2;
-    this.y = canvas.height / 1.25;
+    this.y = canvas.height / 2;
     this.width = 50;
     this.height = 70;
     this.angle = 0;

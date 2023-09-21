@@ -353,7 +353,7 @@ function resetScore(){
   divisor = 60;
   obstacleSpeed = 3;
   currentShip.x = canvas.width / 2;
-  currentShip.y = canvas.height / 1.25;
+  currentShip.y = canvas.height / 2;
   scoreValue.innerText = currentGame.score;
  }
 
