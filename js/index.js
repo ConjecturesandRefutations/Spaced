@@ -9,6 +9,7 @@ let divisor = 60;
 let lastDivisorDecreaseTime = 0;
 let lastSpeedIncreaseTime = 0;
 let startTime = 0;
+let gameOver = false;
 
 // Canvas
 const canvas = document.getElementById('canvas');
@@ -24,20 +25,23 @@ setupSection.style.display = 'none';
 
 //Mobile Arrows
 const arrows = document.querySelector('.circle-container');
-;arrows.style.display = 'none'
+arrows.style.display = 'none'
 
 //Score Section
 const score = document.querySelector('.score');
 score.style.display = 'none';
 const scoreValue = document.getElementById('score-value');
 
-
+//Game Over Section
+const GameOver = document.querySelector('.end-game');
+GameOver.style.display = 'none';
 
 // Homepage Button
 const homeButton = document.querySelector('.homepage');
   homeButton.onclick = () => {
   nextSong.pause();
   openingAudioPlaying = false;
+  GameOver.style.display = 'none';
   arrows.style.display = 'none';
   score.style.display = 'none';
   muteButton.innerHTML = '<img id="mute" src="./images/mute.png"/>';
@@ -47,11 +51,8 @@ const homeButton = document.querySelector('.homepage');
   setupSection.style.display = 'none';
   canvas.style.display = 'none';
   audioControls.style.display = 'none';
-  currentShip.x = canvas.width / 2;
-  currentShip.y = canvas.height / 1.25;
-  backgroundX = 0;
-  obstacleSpeed = 3;
-  divisor = 60;
+  resetScore();
+ 
   cancelAnimationFrame(animationID); // Stop the animation loop
 }
 
@@ -81,6 +82,7 @@ window.onload = () => {
 };
 
 function startGame() {
+  gameOver = false;
   window.scrollTo({ top: 0, behavior: 'smooth' });
   startTime = Date.now();
   currentGame = new Game();
@@ -100,6 +102,10 @@ function startGame() {
 }
 
 function updateCanvas() {
+  if (gameOver) {
+    // Game over, do not continue the animation loop
+    return;
+  }
   const currentTime = Date.now();
   const elapsedTimeInSeconds = Math.floor((currentTime - startTime) / 1000); // Calculate elapsed time in seconds
 
@@ -131,8 +137,8 @@ function updateCanvas() {
       // Check for collisions with obstacles
       for (let j = currentGame.obstacles.length - 1; j >= 0; j--) {
         const obstacle = currentGame.obstacles[j];
-  
-        if (obstacle.collidesWith(rocket.x, rocket.y)) {
+
+       if (obstacle.collidesWith(rocket.x, rocket.y)) {
           // Display explosion and remove the rocket and obstacle from their respective arrays
           currentGame.rockets.splice(i, 1);
           obstacle.destroy();
@@ -243,10 +249,80 @@ function updateCanvas() {
     lastSpeedIncreaseTime = currentTime; // Update the last decrease time
   }
 
-  console.log(currentGame.score);
+  for(let i = 0; i<currentGame.obstacles.length; i++) {
+    if (detectCollision(currentGame.obstacles[i])) {
+     endGame()
+   }       
+ }
 
+function endGame(){
+  gameOver = true;
+  explosion.play();
+  currentShip.x = canvas.width/2;
+  currentShip.y = canvas.height/1.25;
+  GameOver.style.display = '';
+  arrows.style.display = 'none';
+  canvas.style.display = 'none';
+  audioControls.style.display = 'inline';
+}
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
 }
 
+function detectCollision(obstacle) {
+  // Define the leniency value for the corners of the asteroid
+  const cornerLeniency = 5;
 
+  // Calculate the ship's boundaries
+  const shipLeft = currentShip.x;
+  const shipRight = currentShip.x + currentShip.width;
+  const shipTop = currentShip.y;
+  const shipBottom = currentShip.y + currentShip.height;
+
+  // Calculate the obstacle's boundaries
+  const obstacleLeft = obstacle.x;
+  const obstacleRight = obstacle.x + obstacle.width;
+  const obstacleTop = obstacle.y;
+  const obstacleBottom = obstacle.y + obstacle.height;
+
+  // Check for collision without leniency
+  const hasCollision =
+    shipLeft < obstacleRight &&
+    shipRight > obstacleLeft &&
+    shipTop < obstacleBottom &&
+    shipBottom > obstacleTop;
+
+  if (hasCollision) {
+    // Check each corner of the asteroid with leniency
+    const asteroidCorners = [
+      { x: obstacleLeft, y: obstacleTop },
+      { x: obstacleRight, y: obstacleTop },
+      { x: obstacleLeft, y: obstacleBottom },
+      { x: obstacleRight, y: obstacleBottom },
+    ];
+
+    // Check if any asteroid corner is inside the ship's boundaries
+    for (const corner of asteroidCorners) {
+      if (
+        corner.x >= shipLeft - cornerLeniency &&
+        corner.x <= shipRight + cornerLeniency &&
+        corner.y >= shipTop - cornerLeniency &&
+        corner.y <= shipBottom + cornerLeniency
+      ) {
+        return true; // Collision detected with corner leniency
+      }
+    }
+  }
+
+  return false; // No collision detected
+}
+
+
+function resetScore(){
+  currentGame.score = 0;
+  divisor = 60;
+  obstacleSpeed = 3;
+  currentShip.x = canvas.width / 2;
+  currentShip.y = canvas.height / 1.25;
+  scoreValue.innerText = currentGame.score;
+ }

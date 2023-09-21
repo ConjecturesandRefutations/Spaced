@@ -2,13 +2,13 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-html, body, .opening-section {
+html, body, .opening-section,.end-game {
     margin: 0;
     padding: 0;
     background-color: black;
 }
 
-#title{
+#title,#GameOver{
     position: absolute;
     left: 50%;
     top: 30%;
@@ -33,6 +33,15 @@ html, body, .opening-section {
     max-width: 350px;
 }
 
+#restart{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%);
+    cursor: pointer;
+    max-width: 250px;
+}
+
 #start-button-two{
     position: relative;
     left: 50%;
@@ -43,7 +52,7 @@ html, body, .opening-section {
     margin-top: 5px;
 }
 
-#start-button:hover, #start-button-two:hover{
+#start-button:hover, #start-button-two:hover,#restart:hover{
     background-color: black;
 }
 
@@ -278,6 +287,18 @@ html, body, .opening-section {
     font-weight: bold;
 }
 
+.end-game{
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background-image: url('images/EndGame.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
 @media(max-width: 1285px){
 .circle-container {
     width: 180px;
@@ -361,10 +382,10 @@ html, body, .opening-section {
   }
 
 @media(max-width:500px){
-    #title,#setup{
+    #title,#setup,#GameOver{
         max-width: 350px;
     }
-    #start-button,#start-button-two{
+    #start-button,#start-button-two,#restart{
         max-width: 250px;
     }
     .audio-controls{
@@ -387,10 +408,10 @@ html, body, .opening-section {
     }
 
 @media(max-width:400px){
-    #title,#setup{
+    #title,#setup,#GameOver{
         max-width: 300px;
     }
-    #start-button,#start-button-two{
+    #start-button,#start-button-two,#restart{
         max-width: 250px;
     }
     .score{
@@ -417,10 +438,10 @@ html, body, .opening-section {
     font-size: 40px;
     margin-top: 10px;
   }
-  #title,#setup{
+  #title,#setup,#GameOver{
     max-width: 250px;
 }
-#start-button,#start-button-two{
+#start-button,#start-button-two,#restart{
     max-width: 200px;
 }
 #volume-icon{
@@ -443,10 +464,10 @@ html, body, .opening-section {
 }
 
 @media(max-width:280px){
-    #title,#setup{
+    #title,#setup,#GameOver{
         max-width: 230px;
     }
-    #start-button,#start-button-two{
+    #start-button,#start-button-two,#restart{
         max-width: 200px;
     }
     .locationOneImg,.locationTwoImg,.locationThreeImg{
