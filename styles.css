@@ -447,7 +447,7 @@ html, body, .opening-section,.end-game {
         display: flex;
         flex-direction: column;
     }
-    .homepage,.back{
+    .homepage{
         position: absolute;
         left: 20px;
         top: 85px;
