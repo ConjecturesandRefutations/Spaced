@@ -55,6 +55,8 @@ function playNextRandomSong() {
   if (nextSong) {
       nextSong.pause(); // Pause the currently playing song
       nextSong.removeEventListener('ended', playNextRandomSong, { once: true });
+      gameMusicPaused = false;
+      muteButton.innerHTML = '<img id="mute" src="./images/mute.png"/>';
   }
 
   nextSong = songs[currentSongIndex]; // Assign the next song to nextSong variable
