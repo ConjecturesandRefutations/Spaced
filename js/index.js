@@ -81,6 +81,16 @@ window.onload = () => {
   };
 };
 
+// Restart Button
+const restartButton = document.getElementById('restart');
+  restartButton.onclick = () => {
+  gameOver = false;
+  resetScore();
+  GameOver.style.display = 'none';
+  canvas.style.display = '';
+  startGame();
+}
+
 function startGame() {
   gameOver = false;
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -265,6 +275,9 @@ function endGame(){
   canvas.style.display = 'none';
   audioControls.style.display = 'inline';
 }
+
+console.log(divisor);
+console.log(obstacleSpeed);
   // Continue the animation loop
   animationID = requestAnimationFrame(updateCanvas);
 }
@@ -326,3 +339,4 @@ function resetScore(){
   currentShip.y = canvas.height / 1.25;
   scoreValue.innerText = currentGame.score;
  }
+
