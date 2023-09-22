@@ -294,7 +294,7 @@ function endGame(){
   GameOver.style.display = '';
   arrows.style.display = 'none';
   canvas.style.display = 'none';
-  audioControls.style.display = 'inline';
+  audioControls.style.display = 'inline'; //from block
  }
 
   // Continue the animation loop
