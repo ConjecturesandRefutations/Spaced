@@ -303,6 +303,7 @@ html, body, .opening-section,.end-game {
     position: absolute;
     bottom: 15px;
     left: 20px;
+    z-index: 5;
 }
 
 #score{
