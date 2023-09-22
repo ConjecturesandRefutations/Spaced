@@ -107,7 +107,6 @@ const restartButton = document.getElementById('restart');
   resetScore();
   GameOver.style.display = 'none';
   canvas.style.display = '';
-  audioControls.style.display = 'block';
   startGame();
 }
 
@@ -292,7 +291,6 @@ function endGame(){
   GameOver.style.display = '';
   arrows.style.display = 'none';
   canvas.style.display = 'none';
-  audioControls.style.display = 'inline'; //from block
  }
 
   // Continue the animation loop
