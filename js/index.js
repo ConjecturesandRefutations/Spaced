@@ -157,38 +157,36 @@ function updateCanvas() {
   currentShip.drawShip(); // redraw the ship at its current position
   obstaclesFrequency++;
 
-  // Update and draw rockets
-  for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
-    const rocket = currentGame.rockets[i];
-  
-    if (rocket.isAlive) {
-      rocket.update();
-      rocket.draw();
-  
-      // Check for collisions with obstacles
-      for (let j = currentGame.obstacles.length - 1; j >= 0; j--) {
-        const obstacle = currentGame.obstacles[j];
+ // Update and draw rockets
+for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
+  const rocket = currentGame.rockets[i];
 
-       if (obstacle.collidesWith(rocket.x, rocket.y)) {
-          // Display explosion and remove the rocket and obstacle from their respective arrays
-          currentGame.rockets.splice(i, 1);
+  if (rocket.isAlive) {
+    rocket.update();
+    rocket.draw();
+
+    // Check for collisions with obstacles
+    for (let j = currentGame.obstacles.length - 1; j >= 0; j--) {
+      const obstacle = currentGame.obstacles[j];
+
+      if (obstacle.collidesWith(rocket.x, rocket.y)) {
+        if (!obstacle.wasHit) { // Check if the obstacle was not hit before
           obstacle.destroy();
           currentGame.score++;
           scoreValue.innerText = currentGame.score;
-
-          if (gameMusicPaused) {
-          explosion.play();
-          };
-  
-          // A flag in the obstacle to indicate it was hit and handle it accordingly
-          // obstacle.wasHit = true; (already set in destroy method)
+          obstacle.wasHit = true; // Mark the obstacle as hit
         }
+
+        // Remove the rocket from the array
+        currentGame.rockets.splice(i, 1);
       }
-    } else {
-      // Remove dead rockets from the array
-      currentGame.rockets.splice(i, 1);
     }
+  } else {
+    // Remove dead rockets from the array
+    currentGame.rockets.splice(i, 1);
   }
+}
+
   
   if (obstaclesFrequency % divisor === 1) {
     // Determine which side to spawn the obstacle
