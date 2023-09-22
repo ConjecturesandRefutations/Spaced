@@ -171,7 +171,9 @@ for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
       if (obstacle.collidesWith(rocket.x, rocket.y)) {
         if (!obstacle.wasHit) { // Check if the obstacle was not hit before
           obstacle.destroy();
+          if(gameMusicPaused){
           explosion.play();
+          }
           currentGame.score++;
           scoreValue.innerText = currentGame.score;
           obstacle.wasHit = true; // Mark the obstacle as hit
