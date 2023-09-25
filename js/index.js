@@ -195,8 +195,8 @@ for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
     const side = Math.floor(Math.random() * 4); // 0 for top, 1 for right, 2 for bottom, 3 for left
   
     let randomObstacleX, randomObstacleY;
-    let randomObstacleWidth = Math.floor(Math.random() * (150 - 30 + 1)) + 30;;
-    let randomObstacleHeight = Math.floor(Math.random() * (180 - 50 + 1)) + 50;;
+    let randomObstacleWidth = Math.floor(Math.random() * (150 - 30 + 1)) + 30;
+    let randomObstacleHeight = Math.floor(Math.random() * (150 - 30 + 1)) + 30;
   
     // Set initial position based on the chosen side
     switch (side) {
