@@ -22,18 +22,18 @@ const telepath = new Audio('./audio/telepath.mp3');
 const telephasic = new Audio('./audio/telephasic.mp3');
 const pangaea = new Audio('./audio/pangaea.mp3');
 const minus = new Audio('./audio/minus.mp3');
-const QKThr = new Audio('./audio/QKThr.mp3');
 const kid = new Audio('./audio/kid.mp3');
 const tenebris = new Audio('./audio/tenebris.mp3');
 const camel = new Audio('./audio/camel.mp3');
 const zodiac = new Audio('./audio/zodiac.mp3');
 const blimey = new Audio('./audio/blimey.mp3');
 const untravel = new Audio('./audio/untravel.mp3');
+const math = new Audio('./audio/math.mp3');
 
 let songs = [hearts,radiohead,xtal,helisophan,
 binary,clipper,stone,alpha,vastrond,loved,
 blanked,brazil,telepath,telephasic,pangaea,minus,
-QKThr,kid,tenebris,camel,zodiac,blimey,untravel];
+kid,tenebris,camel,zodiac,blimey,untravel,math];
 
 let nextSong;
 
