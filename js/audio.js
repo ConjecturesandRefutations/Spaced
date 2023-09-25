@@ -35,7 +35,7 @@ binary,clipper,stone,alpha,vastrond,loved,
 blanked,brazil,telepath,telephasic,pangaea,minus,
 kid,tenebris,camel,zodiac,blimey,untravel,math];
 
-let nextSong;
+let nextSong;//
 
 let gameMusicPaused = false;
 
