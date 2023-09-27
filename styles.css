@@ -171,6 +171,10 @@ html, body, .opening-section,.end-game {
     font-size: large;
   }
 
+  .back{
+    margin-top: 21px;
+  }
+
   #homepageImg{
     max-width: 150px;
     margin-top: 5px;
