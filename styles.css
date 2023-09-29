@@ -345,7 +345,6 @@ html, body, .opening-section,.end-game {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -15px;
     left: 50%;
     transform: translate(-50%);  
 }
