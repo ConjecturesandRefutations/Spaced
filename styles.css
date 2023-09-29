@@ -514,10 +514,6 @@ html, body, .opening-section,.end-game {
 #start-button,#start-button-two,#restart{
     max-width: 200px;
 }
-#volume-icon{
-    font-size: 40px;
-    margin-top: 10px;
-  }
 }
 
 @media(max-width:300px){

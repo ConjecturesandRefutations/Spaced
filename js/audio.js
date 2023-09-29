@@ -98,9 +98,6 @@ const volumeIcon = document.getElementById('volume-icon');
 const audioControls = document.querySelector('.utility-buttons');
 audioControls.style.display = 'none';
 
-//Mute Button
-const muteButton = document.getElementById('mute-button');
-
 // Click event listener to the opening audio element
 openingAudio.addEventListener('click', () => {
   if (openingAudioPlaying) {
@@ -135,6 +132,9 @@ function pauseGameMusic() {
       muteButton.innerHTML = '<img id="play" src="./images/play.png"/>'; 
     }
   }
+
+  //Mute Button
+const muteButton = document.getElementById('mute-button');
 
 // Mute event listener to the opening audio element
 muteButton.addEventListener('click', () => {
