@@ -301,52 +301,16 @@ function endGame(){
 }
 
 function detectCollision(obstacle) {
-  // Define the leniency value for the corners of the asteroid
-  const cornerLeniency = 1;
+  const overlap = 5; // Adjust this value as needed for the desired overlap
 
-  // Calculate the ship's boundaries
-  const shipLeft = currentShip.x;
-  const shipRight = currentShip.x + currentShip.width;
-  const shipTop = currentShip.y;
-  const shipBottom = currentShip.y + currentShip.height;
-
-  // Calculate the obstacle's boundaries
-  const obstacleLeft = obstacle.x;
-  const obstacleRight = obstacle.x + obstacle.width;
-  const obstacleTop = obstacle.y;
-  const obstacleBottom = obstacle.y + obstacle.height;
-
-  // Check for collision without leniency
-  const hasCollision =
-    shipLeft < obstacleRight &&
-    shipRight > obstacleLeft &&
-    shipTop < obstacleBottom &&
-    shipBottom > obstacleTop;
-
-  if (hasCollision) {
-    // Check each corner of the asteroid with leniency
-    const asteroidCorners = [
-      { x: obstacleLeft, y: obstacleTop },
-      { x: obstacleRight, y: obstacleTop },
-      { x: obstacleLeft, y: obstacleBottom },
-      { x: obstacleRight, y: obstacleBottom },
-    ];
-
-    // Check if any asteroid corner is inside the ship's boundaries
-    for (const corner of asteroidCorners) {
-      if (
-        corner.x >= shipLeft - cornerLeniency &&
-        corner.x <= shipRight + cornerLeniency &&
-        corner.y >= shipTop - cornerLeniency &&
-        corner.y <= shipBottom + cornerLeniency
-      ) {
-        return true; // Collision detected with corner leniency
-      }
-    }
-  }
-
-  return false; // No collision detected
+  return (
+    currentShip.x + currentShip.width - overlap > obstacle.x &&
+    currentShip.x + overlap < obstacle.x + obstacle.width &&
+    currentShip.y + currentShip.height - overlap > obstacle.y &&
+    currentShip.y + overlap < obstacle.y + obstacle.height
+  );
 }
+
 
 
 function resetScore(){
