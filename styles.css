@@ -365,6 +365,28 @@ html, body, .opening-section,.end-game {
     }
 }
 
+@media(max-width: 912px){
+#canvas {
+    width: 100vh; 
+    height: 100vw; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
+    transform-origin: center center;
+}
+.circle-container{
+    transform: rotate(90deg) translateY(50%);
+    left: 50%;
+}
+
+.shoot-container {
+    transform: rotate(-90deg); /* Rotate in the opposite direction */
+  }
+  #shoot{
+    left: 100px;
+  }
+}
+
 @media(max-width:610px){
     #select-location{
         max-width: 300px;
@@ -383,26 +405,6 @@ html, body, .opening-section,.end-game {
     #start-button-two{
     bottom: 0;
     }
-    #canvas {
-        width: 100vh; 
-        height: 100vw; 
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
-        transform-origin: center center;
-    }
-    .circle-container{
-        transform: rotate(90deg) translateY(50%);
-        left: 50%;
-    }
-
-    .shoot-container {
-        transform: rotate(-90deg); /* Rotate in the opposite direction */
-      }
-      #shoot{
-        left: 100px;
-      }
-
       .utility-buttons,.back{
         margin-top: 15px;
       }

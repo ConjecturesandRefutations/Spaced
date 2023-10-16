@@ -280,11 +280,11 @@ for (let i = currentGame.rockets.length - 1; i >= 0; i--) {
     lastSpeedIncreaseTime = currentTime; // Update the last decrease time
   }
 
-  for(let i = 0; i<currentGame.obstacles.length; i++) {
+/*   for(let i = 0; i<currentGame.obstacles.length; i++) {
     if (detectCollision(currentGame.obstacles[i])) {
      endGame()
    }       
- }
+ } */
 
 function endGame(){
   gameOver = true;
