@@ -59,10 +59,6 @@ html, body, .opening-section,.end-game {
     background-color: black;
 }
 
-#restart:hover{
-    background-color: transparent;
-}
-
 .audio{
     height: 15px;
     margin-top: 21px;
@@ -169,6 +165,19 @@ html, body, .opening-section,.end-game {
     background-color: transparent;
     padding: none;
     font-size: large;
+  }
+
+  .settings{
+    position: absolute;
+    color: white;
+    background-color: transparent;
+    right: 50px;
+    bottom: 5px;
+    cursor: pointer;
+  }
+
+  #settings{
+    max-width: 150px;
   }
 
   .back{
@@ -468,7 +477,6 @@ html, body, .opening-section,.end-game {
     .locationImages{
         flex-wrap: wrap;
     }
-
     }
 
 @media(max-width:400px){
@@ -482,6 +490,10 @@ html, body, .opening-section,.end-game {
         bottom: 50%;
         transform: translate(0,50%);
     }
+    .settings{
+        left: 20px;
+        right: auto;
+    }
 }
 
 @media(max-width:365px){
@@ -493,6 +505,9 @@ html, body, .opening-section,.end-game {
         position: absolute;
         left: 20px;
         top: 85px;
+        max-width: 160px;
+    }
+    .settings{
         max-width: 160px;
     }
   }
