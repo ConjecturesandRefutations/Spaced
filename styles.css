@@ -495,7 +495,7 @@ html, body, .opening-section,.end-game {
     .homepage,#mute-button,#next-button,{
         max-height: 25px;
     }
-    #homepageImg,#mute,#skip{
+    #homepageImg,#mute,#skip,#play{
         max-height: 15px;
         margin-top: 2px;
     }
