@@ -50,7 +50,7 @@ const homeButton = document.querySelector('.homepage');
   cancelAnimationFrame(animationID); // Stop the animation loop
 }
 
-// Homepage Button
+// Back Button
 const backButton = document.querySelector('.back');
   backButton.onclick = () => {
   openingSection.style.display = '';
@@ -65,6 +65,7 @@ startButtonOne.onclick = () => {
   opening.currentTime = 0;
   openingSection.style.display = 'none';
   setupSection.style.display = '';
+  audioControls.style.display = '';
 };
 
 // Start Button
@@ -76,7 +77,6 @@ window.onload = () => {
     setupSection.style.display = 'none';
     canvas.style.display = '';
     arrows.style.display = '';
-    audioControls.style.display = '';
     score.style.display = '';
     startGame();
   };
@@ -98,6 +98,5 @@ const settingsButton = document.querySelector('.settings');
   resetScore();
   setupSection.style.display = '';
   GameOver.style.display = 'none';
-  audioControls.style.display = 'none';
   score.style.display = 'none';
 }

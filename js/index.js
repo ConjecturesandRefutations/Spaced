@@ -227,4 +227,3 @@ function resetScore(){
   currentShip.y = canvas.height / 2;
   scoreValue.innerText = currentGame.score;
  }
-

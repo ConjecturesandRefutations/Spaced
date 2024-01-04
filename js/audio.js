@@ -7,7 +7,6 @@ const laser = new Audio('./audio/laser.mp3');
 
 //gameplay music
 const hearts = new Audio('./audio/hearts.mp3');
-const radiohead = new Audio('./audio/radiohead.mp3');
 const xtal = new Audio('./audio/xtal.mp3');
 const helisophan = new Audio('./audio/heliosphan.mp3');
 const binary = new Audio('./audio/binary.mp3');
@@ -30,7 +29,7 @@ const blimey = new Audio('./audio/blimey.mp3');
 const untravel = new Audio('./audio/untravel.mp3');
 const math = new Audio('./audio/math.mp3');
 
-let songs = [hearts,radiohead,xtal,helisophan,
+let songs = [hearts,xtal,helisophan,
 binary,clipper,stone,alpha,vastrond,loved,
 blanked,brazil,telepath,telephasic,pangaea,minus,
 kid,tenebris,camel,zodiac,blimey,untravel,math];

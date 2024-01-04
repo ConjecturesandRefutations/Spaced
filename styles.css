@@ -118,17 +118,16 @@ html, body, .opening-section,.end-game {
   #volume-icon{margin-top: 20px;}
 
   .utility-buttons {
-    margin-top: 21px;
-    position: relative;
-    z-index: 999; 
-}
-
-.audio-controls{
     position: absolute;
-    left: 50px;
+    z-index: 999; 
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-left: 10px;
 }
 
-#mute-button,#next-button{
+#mute-button,#next-button,.homepage{
     text-decoration: none;
     margin-bottom: 5px;
     background-color: transparent;
@@ -151,11 +150,7 @@ html, body, .opening-section,.end-game {
     margin-top: 5px;
 }
 
-  #next-button{
-    margin-left: 5px;
-  }
-
-  .homepage,.back{
+  .back{
     position: absolute;
     right: 50px;
     cursor: pointer;
@@ -345,7 +340,7 @@ html, body, .opening-section,.end-game {
     z-index: 0;
 }
 
-@media(max-width: 1285px){
+@media(max-width: 1000px){
 .circle-container {
     width: 180px;
     height: 180px;
@@ -414,10 +409,12 @@ html, body, .opening-section,.end-game {
     #start-button-two{
     bottom: 0;
     }
-      .utility-buttons,.back{
+      .back{
         margin-top: 15px;
       }
-
+      .selections{
+        top: 10%;
+    }
   }
 
   @media(max-width:600px){
@@ -431,13 +428,17 @@ html, body, .opening-section,.end-game {
 
 
 @media(max-width:520px){
-    .audio-controls{
+    .utility-buttons{
         display: flex;
         flex-direction: column;
         justify-items: flex-start;
+        gap: 0;
     }
     #next-button{
         margin-left: 0px;
+    }
+    .selections{
+        top: 15%;
     }
   }
 
@@ -477,13 +478,34 @@ html, body, .opening-section,.end-game {
     .locationImages{
         flex-wrap: wrap;
     }
+    .selections{
+        left: 40%;
+    }
+    .utility-buttons{
+        top: 5px;
+    }
+    #start-button-two{
+        max-width: 150px;
+        background-color: transparent;
+        padding: 5px;
+        border: 2px solid;
+        border-color: grey black black grey;
+        cursor: pointer;
+    }
+    .homepage,#mute-button,#next-button,{
+        max-height: 25px;
+    }
+    #homepageImg,#mute,#skip{
+        max-height: 15px;
+        margin-top: 2px;
+    }
     }
 
 @media(max-width:400px){
     #title,#setup,#GameOver,#instruction-title{
         max-width: 300px;
     }
-    #start-button,#start-button-two,#restart{
+    #start-button,#restart{
         max-width: 250px;
     }
     .score{
@@ -494,18 +516,15 @@ html, body, .opening-section,.end-game {
         left: 20px;
         right: auto;
     }
+    .selections{
+        left: 45%;
+    }
 }
 
 @media(max-width:365px){
     .utility-buttons{
         display: flex;
         flex-direction: column;
-    }
-    .homepage{
-        position: absolute;
-        left: 20px;
-        top: 85px;
-        max-width: 160px;
     }
     .settings{
         max-width: 160px;
@@ -527,8 +546,11 @@ html, body, .opening-section,.end-game {
   #title,#setup,#GameOver,#instruction-title{
     max-width: 250px;
 }
-#start-button,#start-button-two,#restart{
+#start-button,#restart{
     max-width: 200px;
+}
+.selections{
+    left: 50%;
 }
 }
 
@@ -536,21 +558,11 @@ html, body, .opening-section,.end-game {
     .audio-controls,.homepage{
         left: 5px;
     }
-    .selections{
-        left: 0;
-        transform: translate(0);
-      }
       .score{
         left: 5px;
     }
-}
-
-@media(max-width:280px){
-    #title,#setup,#GameOver,#instruction-title{
-        max-width: 230px;
-    }
-    #start-button,#start-button-two,#restart{
-        max-width: 200px;
+    #locations{
+        max-width: 250px;
     }
     .locationOneImg,.locationTwoImg,.locationThreeImg{
         width: 130px;
@@ -558,5 +570,14 @@ html, body, .opening-section,.end-game {
     }
     #select-location{
         width: 270px;
+    }
+}
+
+@media(max-width:280px){
+    #title,#setup,#GameOver,#instruction-title{
+        max-width: 230px;
+    }
+    #start-button,#restart{
+        max-width: 200px;
     }
 }
