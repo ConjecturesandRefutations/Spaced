@@ -340,7 +340,7 @@ html, body, .opening-section,.end-game {
     z-index: 0;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1281px){
 .circle-container {
     width: 180px;
     height: 180px;
